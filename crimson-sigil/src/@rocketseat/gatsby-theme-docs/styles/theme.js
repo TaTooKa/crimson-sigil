@@ -5,8 +5,6 @@ export default {
     shape: `#F2F2FA`,
     title: `#5c5c70`,
     text: `#26282c`,
-    turquoise: `#0cffe1ff`,
-    fuchsia: `#ff0096ff`, 
     components: {
       blockquote: {
         background: `#939dae`,
@@ -20,13 +18,14 @@ export default {
     }
   },
   darkcolors: {
-    primary: '#ff0096ff',
-    background: '#181d24',
+    primary: '#ffce22ff',
+    primary_dark: '#8e6f02ff',
+    secondary: '#bb0002ff',
+    secondary_dark: '#590001ff',
+    background: '#1e1512ff',
     shape: `#131313`,
     title: `#bfbfbf`,
     text: `#ffffff`,
-    turquoise: `#0cffe1ff`,
-    fuchsia: `#ff0096ff`, 
     components: {
       blockquote: {
         background: `#2d3748`,
@@ -40,9 +39,9 @@ export default {
   },
   fonts: {
       fontFace: {
-      family: 'EuroStyle',
-      file: '/fonts/EuroStyleNormal',
+      family: 'Alegreya',
+      file: '/fonts/Alegreya-Medium',
     },
-    body: `EuroStyle, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
+    body: `Alegreya, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   },
 };

@@ -16,41 +16,51 @@ export default function GlobalStyle() {
         }
 
         @font-face {
-            font-family: 'EuroStyle';
+            font-family: 'Alegreya';
             font-weight: normal;
             font-display: swap;
             font-style: normal;
             font-named-instance: 'Regular';
-            src: url(/fonts/EuroStyleNormal.woff2) format("woff2");
-            size-adjust: 110%;
+            src: url(/fonts/Alegreya-Medium.woff2) format("woff2");
+            size-adjust: 100%;
         }
 
         @font-face {
-            font-family: 'EuroStyle';
+            font-family: 'Alegreya';
             font-weight: bold;
             font-display: swap;
             font-style: normal;
             font-named-instance: 'Bold';
-            src: url(/fonts/EurostileBold.woff2) format("woff2");
+            src: url(/fonts/Alegreya-ExtraBold.woff2) format("woff2");
         }
 
         @font-face {
-            font-family: 'EuroStyle';
+            font-family: 'Alegreya';
             font-weight: normal;
             font-display: swap;
             font-style: italic;
             font-named-instance: 'Italic';
-            src: url(/fonts/Eurostile-Oblique.woff2) format("woff2");
-            size-adjust: 90%;
+            src: url(/fonts/Alegreya-MediumItalic.woff2) format("woff2");
+            size-adjust: 100%;
         }
 
         @font-face {
-            font-family: 'Android101';
+            font-family: 'Exocet';
             font-weight: normal;
             font-display: swap;
             font-style: normal;
             font-named-instance: 'Regular';
-            src: url(/fonts/Android101.woff2) format("woff2");
+            src: url(/fonts/ExocetHeavy.woff2) format("woff2");
+            size-adjust: 100%;
+        }
+
+        @font-face {
+            font-family: 'Blackmoor';
+            font-weight: normal;
+            font-display: swap;
+            font-style: normal;
+            font-named-instance: 'Regular';
+            src: url(/fonts/BlackmoorLET.woff2) format("woff2");
             size-adjust: 100%;
         }
 
@@ -75,6 +85,7 @@ export default function GlobalStyle() {
           color: ${theme.colors.title};
           font-weight: bold;
           margin-bottom: 24px;
+          font-family: 'Blackmoor';
         }
 
         h2 {
@@ -117,10 +128,10 @@ export default function GlobalStyle() {
           font-size: 1.2em;
           color: ${theme.darkcolors.text};
           -webkit-text-stroke: 1px #000;
-          text-shadow: 0 0 10px ${theme.colors.turquoise}, 2px 2px 5px #000;
+          text-shadow: 0 0 10px ${theme.darkcolors.primary}, 2px 2px 5px #000;
 
           .anchor svg {
-            box-shadow: inset 0 0 10px ${theme.colors.turquoise};
+            box-shadow: inset 0 0 10px ${theme.darkcolors.primary};
             border-radius: 6px;
             padding: 2px;
           }
@@ -138,14 +149,14 @@ export default function GlobalStyle() {
           color: ${theme.darkcolors.text};
         }
         
-        .turquoise {
-            color: ${theme.colors.turquoise};
-            -webkit-text-stroke: 1px #008978;
+        .primary {
+            color: ${theme.darkcolors.primary};
+            -webkit-text-stroke: 1px ${theme.darkcolors.primary_dark};
         }
 
-        .fuchsia {
-            color: ${theme.colors.fuchsia};
-            -webkit-text-stroke: 1px #9b005b;
+        .secondary {
+            color: ${theme.darkcolors.secondary};
+            -webkit-text-stroke: 1px ${theme.darkcolors.secondary_dark};
         }
 
         .bold {
@@ -153,7 +164,8 @@ export default function GlobalStyle() {
         }
 
         .stat {
-            font-family: 'Android101';
+            font-family: 'Exocet';
+            letter-spacing: 0.001rem;
         }
         .stat-value {
           font-size: 0.7em;
@@ -189,13 +201,13 @@ export default function GlobalStyle() {
           color: ${theme.colors.text};
           font-weight: bold;
           text-decoration-style: dotted;
-          text-decoration-color: ${theme.colors.fuchsia};
+          text-decoration-color: ${theme.darkcolors.secondary};
           transition: 0.5s;
 
           &:hover {
             text-decoration-style: dashed;
-            text-decoration-color: ${theme.colors.turquoise};
-            text-shadow: 0 0 3px ${theme.colors.turquoise};
+            text-decoration-color: ${theme.darkcolors.primary};
+            text-shadow: 0 0 3px ${theme.darkcolors.primary};
           }
         }
 
@@ -481,26 +493,26 @@ export default function GlobalStyle() {
                 a {
                   border-radius: 15px !important;
                   font-weight: bold !important;
-                  font-family: 'Eurostyle';
+                  font-family: 'Alegreya';
                   font-variant: small-caps;
                   font-size: 1.2em !important;
                   text-align: center !important;
                   display: inline-block !important;
-                  color: ${theme.colors.turquoise} !important;
+                  color: ${theme.darkcolors.primary} !important;
                   background-color: ${theme.darkcolors.components.input.background} !important;
                   text-shadow: 1px 1px 3px black;
                   box-shadow: inset -2px -2px 4px #000;
                   transition: 1.5s ease-out !important;
                   :hover {
-                    box-shadow: inset 0 0 5px ${theme.colors.turquoise};
-                    text-shadow: 0 0 10px ${theme.colors.turquoise};
+                    box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
+                    text-shadow: 0 0 10px ${theme.darkcolors.primary};
                     transition: .3s ease-in !important;
                   }
                 }
                 a.active-link {
-                  background-color: ${theme.colors.fuchsia} !important;
+                  background-color: ${theme.darkcolors.secondary} !important;
                   box-shadow: inset -2px -2px 4px ${theme.darkcolors.components.blockquote.background}, inset 2px 4px 6px #ffffff88;
-                  text-shadow: 1px 1px 3px black, 0 0 10px ${theme.colors.turquoise};
+                  text-shadow: 1px 1px 3px black, 0 0 10px ${theme.darkcolors.primary};
                   transition: 1s;
                 }
               }
@@ -532,9 +544,9 @@ export default function GlobalStyle() {
             input {
                 text-align: center;
                 background-color: ${theme.darkcolors.components.input.background};
-                font-family: 'EuroStyle';
+                font-family: 'Alegreya';
                 font-weight: bold;
-                border: 1px solid ${theme.colors.turquoise};
+                border: 1px solid ${theme.darkcolors.primary};
                 border-radius: 0 20px 0 3px;
                 color: ${theme.darkcolors.components.input.text};
                 transition: 3s;
@@ -543,17 +555,17 @@ export default function GlobalStyle() {
                 outline: 1px solid red;
             }
             input:focus, textarea:focus {
-                box-shadow: 0 0 15px ${theme.colors.turquoise};
+                box-shadow: 0 0 15px ${theme.darkcolors.primary};
                 transition: 0.5s;
             }
             textarea {
                 background-color: ${theme.darkcolors.components.input.background};
                 color: ${theme.darkcolors.components.input.text};
-                font-family: 'EuroStyle';
+                font-family: 'Alegreya';
                 font-weight: bold;
                 font-size: 0.8em;
                 padding: 3px 5px;
-                border: 1px solid ${theme.colors.turquoise};
+                border: 1px solid ${theme.darkcolors.primary};
                 border-radius: 0 10px 0 3px;
                 transition: 1s;
             }
@@ -611,16 +623,16 @@ export default function GlobalStyle() {
                         display: none;
                     }
                     #inControlInput:checked+label {
-                        color: ${theme.colors.turquoise};
-                        text-shadow: 0 0 15px ${theme.colors.turquoise};
+                        color: ${theme.darkcolors.primary};
+                        text-shadow: 0 0 15px ${theme.darkcolors.primary};
                         transition: 0.5s;
-                        box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                        box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
                     }
                     #inABadSpotInput:checked+label {
-                        color: ${theme.colors.fuchsia};
-                        text-shadow: 0 0 15px ${theme.colors.fuchsia};
+                        color: ${theme.darkcolors.secondary};
+                        text-shadow: 0 0 15px ${theme.darkcolors.secondary};
                         transition: 0.5s;
-                        box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
+                        box-shadow: inset 0 0 5px ${theme.darkcolors.secondary};
                     }
                 }
                 label {
@@ -689,9 +701,9 @@ export default function GlobalStyle() {
                 }
                 input:checked+label {
                     color: #fff;
-                    border: 1px solid ${theme.colors.turquoise};
-                    box-shadow: inset 0 0 5px ${theme.colors.turquoise};
-                    text-shadow: 0 0 10px ${theme.colors.turquoise};
+                    border: 1px solid ${theme.darkcolors.primary};
+                    box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
+                    text-shadow: 0 0 10px ${theme.darkcolors.primary};
                 }
                 input {
                     display: none;
@@ -755,10 +767,10 @@ export default function GlobalStyle() {
                         box-shadow: inset 0 0 5px #000;
                     }
                     .col input:checked+label {
-                        color: ${theme.colors.turquoise};
-                        text-shadow: 0 0 10px ${theme.colors.turquoise};
-                        box-shadow: inset 0 0 5px ${theme.colors.turquoise};
-                        border: 1px solid ${theme.colors.turquoise};
+                        color: ${theme.darkcolors.primary};
+                        text-shadow: 0 0 10px ${theme.darkcolors.primary};
+                        box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
+                        border: 1px solid ${theme.darkcolors.primary};
                         border-radius: 15px;
                         transition: 0.5s;
                     }
@@ -820,7 +832,7 @@ export default function GlobalStyle() {
 
               ::before {
                 content: "";
-                font-family: "EuroStyle";
+                font-family: "Alegreya";
                 font-size: 14px;
                 color: #666;
                 transition: 0.5s ease-in-out;
@@ -828,13 +840,13 @@ export default function GlobalStyle() {
               }
 
               :checked {
-                border: 1px solid ${theme.colors.turquoise};
-                box-shadow: inset 0 0 6px ${theme.colors.turquoise}, inset 0 0 20px ${theme.colors.fuchsia}, 0 0 12px ${theme.colors.turquoise};
+                border: 1px solid ${theme.darkcolors.primary};
+                box-shadow: inset 0 0 6px ${theme.darkcolors.primary}, inset 0 0 20px ${theme.darkcolors.secondary}, 0 0 12px ${theme.darkcolors.primary};
                 transform: translate(-8px, 0px);
               }
               :checked::before {
-                color: ${theme.colors.turquoise};
-                text-shadow: 0 0 3px ${theme.colors.turquoise};
+                color: ${theme.darkcolors.primary};
+                text-shadow: 0 0 3px ${theme.darkcolors.primary};
               }
             }
             label {
@@ -848,19 +860,19 @@ export default function GlobalStyle() {
                 letter-spacing: 0.1em;
                 transition: 0.5s;
                 color: #000;
-                text-shadow: 0 0 8px ${theme.colors.turquoise};
+                text-shadow: 0 0 8px ${theme.darkcolors.primary};
               }
             }
             input:checked+label .trait-name {
               margin: 0 0 0 -5px;
               letter-spacing: 0.15em;
-              text-shadow: 0 0 10px ${theme.colors.turquoise};
-              color: ${theme.colors.turquoise};
+              text-shadow: 0 0 10px ${theme.darkcolors.primary};
+              color: ${theme.darkcolors.primary};
             }
 
             input:checked+label +img.art, img.art:hover {
-              border: 1px solid ${theme.colors.fuchsia};
-              box-shadow: 0 0 5px ${theme.colors.fuchsia}; 
+              border: 1px solid ${theme.darkcolors.secondary};
+              box-shadow: 0 0 5px ${theme.darkcolors.secondary}; 
               filter: brightness(1);
             }
           }
@@ -887,11 +899,11 @@ export default function GlobalStyle() {
                   background-color: ${theme.darkcolors.components.input.background};
                   height: 32px; 
                   width: 74%;
-                  font-family: 'EuroStyle';
+                  font-family: 'Alegreya';
                   font-weight: bold;
                   font-size: 0.9em;
                   padding: 2px 3px 2px 10px;
-                  border: 1px solid ${theme.colors.turquoise};
+                  border: 1px solid ${theme.darkcolors.primary};
                   border-radius: 0 10px 10px 0;
                   color: ${theme.darkcolors.components.input.text};
                   transition: 3s;
@@ -903,7 +915,7 @@ export default function GlobalStyle() {
                   }
               }
               input:focus {
-                  box-shadow: 0 0 15px ${theme.colors.turquoise};
+                  box-shadow: 0 0 15px ${theme.darkcolors.primary};
                   transition: 0.5s;
               }
             }
@@ -911,19 +923,19 @@ export default function GlobalStyle() {
         }
 
         button#add-challenge-button {
-          border: 1px solid ${theme.colors.turquoise};
+          border: 1px solid ${theme.darkcolors.primary};
           height: 30px;
           padding: 5px 10px;
-          font-family: 'EuroStyle';
+          font-family: 'Alegreya';
           font-size: 0.8em;
           font-weight: bold;
           border-radius: 5px;
           background-color: ${theme.darkcolors.components.input.background};
-          color: ${theme.colors.turquoise};
-          box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+          color: ${theme.darkcolors.primary};
+          box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
           transition: .5s ease;
           :hover {
-            box-shadow: inset 0 0 15px ${theme.colors.turquoise};
+            box-shadow: inset 0 0 15px ${theme.darkcolors.primary};
 
           }
         }
@@ -932,15 +944,15 @@ export default function GlobalStyle() {
           input {
             text-align: center;
             background-color: ${theme.darkcolors.components.input.background};
-            font-family: 'EuroStyle';
+            font-family: 'Alegreya';
             font-weight: bold;
             font-size: 1em;
-            border: 1px solid ${theme.colors.turquoise};
+            border: 1px solid ${theme.darkcolors.primary};
             color: ${theme.darkcolors.components.input.text};
             transition: 3s;
           }
           input:focus {
-            box-shadow: 0 0 15px ${theme.colors.turquoise};
+            box-shadow: 0 0 15px ${theme.darkcolors.primary};
             transition: 0.5s;
           }
 
@@ -951,7 +963,7 @@ export default function GlobalStyle() {
             padding: 15px 5px;
             transition: 1.5s ease-out;
             &.created {
-              box-shadow: 0 0 20px ${theme.colors.turquoise}; 
+              box-shadow: 0 0 20px ${theme.darkcolors.primary}; 
             }
             .challenge-inputs {
               width: 98%;
@@ -1013,8 +1025,8 @@ export default function GlobalStyle() {
                   transition: 0.5s;
                   background: linear-gradient(
                     120deg,
-                    ${theme.colors.fuchsia},
-                    ${theme.colors.turquoise},
+                    ${theme.darkcolors.secondary},
+                    ${theme.darkcolors.primary},
                     ${theme.darkcolors.background}
                   );
                   background-size: 150%;
@@ -1034,7 +1046,7 @@ export default function GlobalStyle() {
               .progress-button {
                 cursor: pointer;
                 background: ${theme.darkcolors.background};
-                font-family: 'EuroStyle';
+                font-family: 'Alegreya';
                 font-weight: bold;
                 letter-spacing: .2em;
                 border: none;
@@ -1049,27 +1061,27 @@ export default function GlobalStyle() {
               }
               .make-progress-button {
                 width:70%;
-                color: ${theme.colors.turquoise};
-                text-shadow: 0 0 15px ${theme.colors.turquoise};
-                box-shadow: inset 0 0 6px ${theme.colors.turquoise};
+                color: ${theme.darkcolors.primary};
+                text-shadow: 0 0 15px ${theme.darkcolors.primary};
+                box-shadow: inset 0 0 6px ${theme.darkcolors.primary};
                 :hover {
-                  box-shadow: inset 0 0 4px ${theme.colors.turquoise};
+                  box-shadow: inset 0 0 4px ${theme.darkcolors.primary};
                 }
                 :active {
-                  box-shadow: inset 0 0 20px ${theme.colors.turquoise};
+                  box-shadow: inset 0 0 20px ${theme.darkcolors.primary};
                 }
               }
               .revert-progress-button {
                 width: 28%;
                 margin: 0 0 0 2%;
-                color: ${theme.colors.fuchsia};
-                text-shadow: 0 0 15px ${theme.colors.fuchsia};
-                box-shadow: inset 0 0 6px ${theme.colors.fuchsia};
+                color: ${theme.darkcolors.secondary};
+                text-shadow: 0 0 15px ${theme.darkcolors.secondary};
+                box-shadow: inset 0 0 6px ${theme.darkcolors.secondary};
                 :hover {
-                  box-shadow: inset 0 0 4px ${theme.colors.fuchsia};
+                  box-shadow: inset 0 0 4px ${theme.darkcolors.secondary};
                 }
                 :active {
-                  box-shadow: inset 0 0 20px ${theme.colors.fuchsia};
+                  box-shadow: inset 0 0 20px ${theme.darkcolors.secondary};
                 }
               }
 
@@ -1161,9 +1173,9 @@ export default function GlobalStyle() {
                   }
                 }
                 input:checked+label {
-                  border: 1px solid ${theme.colors.turquoise};
-                  color: ${theme.colors.turquoise};
-                  box-shadow: 0 0 5px ${theme.colors.turquoise};
+                  border: 1px solid ${theme.darkcolors.primary};
+                  color: ${theme.darkcolors.primary};
+                  box-shadow: 0 0 5px ${theme.darkcolors.primary};
                 }
 
               }
@@ -1206,14 +1218,14 @@ export default function GlobalStyle() {
                   box-shadow: 0 0 5px white;
               }
               .state-button.state-button-fulfilled input:checked+label {
-                  border: 1px solid ${theme.colors.turquoise};
-                  color: ${theme.colors.turquoise};
-                  box-shadow: 0 0 5px ${theme.colors.turquoise};
+                  border: 1px solid ${theme.darkcolors.primary};
+                  color: ${theme.darkcolors.primary};
+                  box-shadow: 0 0 5px ${theme.darkcolors.primary};
               }
               .state-button.state-button-failed input:checked+label {
-                  border: 1px solid ${theme.colors.fuchsia};
-                  color: ${theme.colors.fuchsia};
-                  box-shadow: 0 0 5px ${theme.colors.fuchsia};
+                  border: 1px solid ${theme.darkcolors.secondary};
+                  color: ${theme.darkcolors.secondary};
+                  box-shadow: 0 0 5px ${theme.darkcolors.secondary};
               }
               .erase-button {
                 margin: 0 10px 0 0;
@@ -1222,21 +1234,21 @@ export default function GlobalStyle() {
                   display: block;
                   width: 100%;
                   height: 30px;
-                  border: 1px solid ${theme.colors.fuchsia};
-                  box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
+                  border: 1px solid ${theme.darkcolors.secondary};
+                  box-shadow: inset 0 0 5px ${theme.darkcolors.secondary};
                   border-radius: 3px;
                   text-align: center;
                   vertical-align: middle;
                   transition: .5s ease;
                   :hover {
-                    box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
+                    box-shadow: inset 0 0 15px ${theme.darkcolors.secondary};
                     cursor: pointer;
                   }
                   svg.MuiSvgIcon-root {
                     margin: 1px auto;
                     text-align: center;
                     transition: 1s ease;
-                    color: ${theme.colors.fuchsia};
+                    color: ${theme.darkcolors.secondary};
                     opacity: .7;
                     scale: 90%;
                     :hover {
@@ -1261,11 +1273,11 @@ export default function GlobalStyle() {
             text-align: center;
             vertical-align: middle;
             background: linear-gradient(
-              ${theme.colors.fuchsia},
+              ${theme.darkcolors.secondary},
               #000,
-              ${theme.colors.fuchsia},
+              ${theme.darkcolors.secondary},
               #000,
-              ${theme.colors.fuchsia}
+              ${theme.darkcolors.secondary}
             )
             0 0/100% 200%;
             background-size: 100% 20%;
@@ -1306,7 +1318,7 @@ export default function GlobalStyle() {
               margin: 0 auto;
               font-weight: bold;
               color: #ffff;
-              text-shadow: 0 0 5px ${theme.colors.fuchsia};
+              text-shadow: 0 0 5px ${theme.darkcolors.secondary};
             }
           }
         }
@@ -1323,7 +1335,7 @@ export default function GlobalStyle() {
           font-weight: bold;
           letter-spacing: 0.1em;
           animation: glitch-skew 1s infinite linear alternate-reverse;
-          text-shadow: 0 0 15px ${theme.colors.fuchsia}, 0 0 3px #fff;
+          text-shadow: 0 0 15px ${theme.darkcolors.secondary}, 0 0 3px #fff;
         }
         span.glitch::before {
           content: attr(data-text);
@@ -1332,7 +1344,7 @@ export default function GlobalStyle() {
           width: 100%;
           height: 100%;
           left: 2px;
-          text-shadow: -2px 0 ${theme.colors.fuchsia}, 0 0 3px ${theme.colors.turquoise};
+          text-shadow: -2px 0 ${theme.darkcolors.secondary}, 0 0 3px ${theme.darkcolors.primary};
           clip: rect(44px, 450px, 56px, 0);
           animation: glitch-anim 5s infinite linear alternate-reverse;
         }
@@ -1344,7 +1356,7 @@ export default function GlobalStyle() {
           width: 100%;
           height: 100%;
           left: -2px;
-          text-shadow: -2px 0 ${theme.colors.turquoise}, 2px 2px ${theme.colors.fuchsia};
+          text-shadow: -2px 0 ${theme.darkcolors.primary}, 2px 2px ${theme.darkcolors.secondary};
           animation: glitch-anim2 1s infinite linear alternate-reverse;
         }
 
@@ -1642,16 +1654,16 @@ export default function GlobalStyle() {
           }
           /* Handle */
           ::-webkit-scrollbar-thumb {
-            background: ${theme.colors.turquoise};
+            background: ${theme.darkcolors.primary};
             transition: 1s;
             border-radius: 3px;
-            box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+            box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
           }
           /* Handle on hover */
           ::-webkit-scrollbar-thumb:hover {
-            background: ${theme.colors.fuchsia};
+            background: ${theme.darkcolors.secondary};
             transition: 1s;
-            box-shadow: 0 0 5px ${theme.colors.fuchsia};
+            box-shadow: 0 0 5px ${theme.darkcolors.secondary};
           }
         }
 
@@ -1662,8 +1674,8 @@ export default function GlobalStyle() {
             text-shadow: 0 0 6px #444;
           }
           a {
-            text-shadow: 0 0 5px ${theme.colors.turquoise};
-            color: ${theme.colors.turquoise};
+            text-shadow: 0 0 5px ${theme.darkcolors.primary};
+            color: ${theme.darkcolors.primary};
           }
           blockquote {
             font-size: 0.8em;
@@ -1678,9 +1690,9 @@ export default function GlobalStyle() {
               width: 75%;
               background-color: ${theme.darkcolors.components.input.background};
               padding: 5px 6px 4px 9px;
-              font-family: 'EuroStyle';
+              font-family: 'Alegreya';
               font-weight: bold;
-              border: 1px solid ${theme.colors.turquoise};
+              border: 1px solid ${theme.darkcolors.primary};
               border-radius: 3px 0 0 3px;
               min-height: 35px;
               font-size: 1em;
@@ -1688,23 +1700,23 @@ export default function GlobalStyle() {
               transition: 1s;
             }
             .oracle-result.toggled {
-              box-shadow: inset 0 0 15px ${theme.colors.turquoise};
-              text-shadow: 0 0 15px ${theme.colors.fuchsia};
-              color: ${theme.colors.fuchsia};
+              box-shadow: inset 0 0 15px ${theme.darkcolors.primary};
+              text-shadow: 0 0 15px ${theme.darkcolors.secondary};
+              color: ${theme.darkcolors.secondary};
             }
             button.randomize-button {
-              border: 2px solid ${theme.colors.fuchsia};
+              border: 2px solid ${theme.darkcolors.secondary};
               overflow: hidden;
               background-color: #000;
               min-height: 35px;
               width: 25%;
               padding: 5px 10px;
-              color: ${theme.colors.fuchsia};
-              font-family: 'EuroStyle';
+              color: ${theme.darkcolors.secondary};
+              font-family: 'Alegreya';
               font-weight: bold;
               font-size: 0.6em;
               letter-spacing: 0.1em;
-              box-shadow: inset 0 0 10px ${theme.colors.fuchsia};
+              box-shadow: inset 0 0 10px ${theme.darkcolors.secondary};
               border-radius: 0 10px 10px 0;
               transition: 0.2s;
               :before {
@@ -1720,9 +1732,9 @@ export default function GlobalStyle() {
                 }
               }
               :active {
-                box-shadow: inset 0 0 20px ${theme.colors.fuchsia}, 5px 0 15px ${theme.colors.fuchsia};
+                box-shadow: inset 0 0 20px ${theme.darkcolors.secondary}, 5px 0 15px ${theme.darkcolors.secondary};
                 color: #fff;
-                text-shadow: 0 0 5px ${theme.colors.fuchsia};
+                text-shadow: 0 0 5px ${theme.darkcolors.secondary};
               }
 
             }
@@ -1737,23 +1749,23 @@ export default function GlobalStyle() {
           button#export, input#import {
             width: 100%;
             margin: 10px 0 20px 0;
-            border: 2px solid ${theme.colors.fuchsia};
+            border: 2px solid ${theme.darkcolors.secondary};
             overflow: hidden;
             background-color: #000;
             min-height: 35px;
             padding: 5px 10px;
-            color: ${theme.colors.fuchsia};
-            font-family: 'EuroStyle';
+            color: ${theme.darkcolors.secondary};
+            font-family: 'Alegreya';
             font-weight: bold;
             font-size: 0.6em;
             letter-spacing: 0.1em;
-            box-shadow: inset 0 0 10px ${theme.colors.fuchsia};
+            box-shadow: inset 0 0 10px ${theme.darkcolors.secondary};
             border-radius: 5px;
             transition: 0.2s;
             :active {
-              box-shadow: inset 0 0 20px ${theme.colors.fuchsia}, 5px 0 15px ${theme.colors.fuchsia};
+              box-shadow: inset 0 0 20px ${theme.darkcolors.secondary}, 5px 0 15px ${theme.darkcolors.secondary};
               color: #fff;
-              text-shadow: 0 0 5px ${theme.colors.fuchsia};
+              text-shadow: 0 0 5px ${theme.darkcolors.secondary};
             }
           }
           blockquote {
@@ -1775,9 +1787,9 @@ export default function GlobalStyle() {
           button:after {
             visibility: visible;
             content: 'EXAMPLE';
-            color: ${theme.colors.turquoise};
+            color: ${theme.darkcolors.primary};
             font-style: italic;
-            font-family: 'EuroStyle';
+            font-family: 'Alegreya';
             letter-spacing: 0.2em;
             opacity: 0.5;
             background: #000;

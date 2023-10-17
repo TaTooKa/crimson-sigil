@@ -4,35 +4,51 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="./fonts/EuroStyleNormal.woff2"
+      href="./fonts/Alegreya-Medium.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
-      key="EuroStyle"
+      key="AlegreyaMedium"
     />,
     <link
       rel="preload"
-      href="./fonts/EurostileBold.woff2"
+      href="./fonts/Alegreya-MediumItalic.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
-      key="EuroStyleBold"
+      key="AlegreyaMediumItalic"
     />,
     <link
       rel="preload"
-      href="./fonts/Eurostile-Oblique.woff2"
+      href="./fonts/Alegreya-ExtraBold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
-      key="EuroStyleOblique"
+      key="AlegreyaBold"
     />,
     <link
       rel="preload"
-      href="./fonts/Android101.woff2"
+      href="./fonts/Alegreya-ExtraBoldItalic.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
-      key="Android101"
+      key="AlegreyaBoldItalic"
+    />,
+    <link
+      rel="preload"
+      href="./fonts/ExocetHeavy.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="ExocetHeavy"
+    />,
+    <link
+      rel="preload"
+      href="./fonts/BlackmoorLET.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="Blackmoor"
     />,
   ])
 }

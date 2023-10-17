@@ -24,11 +24,11 @@ const Container = styled.header`
     span.white {
       color: #fff;
     }
-    span.turquoise {
-      color: #0cffe1;
+    span.primary {
+      color: #ffce22ff;
     }
-    span.fuchsia {
-      color: #ff0096;
+    span.secondary {
+      color: #bb0002ff;
     }
   }
 
@@ -71,15 +71,15 @@ export default function Header({ handleMenuOpen }) {
       </button>
       {/* <h2>{siteTitle}</h2> */}
       <h2>
-        <span class="fuchsia">cy</span>
+        <span class="secondary">cy</span>
         <span class="white">.</span>
-        <span class="fuchsia">br</span>
+        <span class="secondary">br</span>
         <span class="white">/</span>
-        <span class="turquoise">dys</span>
+        <span class="primary">dys</span>
         <span class="white">.</span>
-        <span class="turquoise">top</span>
+        <span class="primary">top</span>
         <span class="white">.</span>
-        <span class="turquoise">ia</span>
+        <span class="primary">ia</span>
       </h2>
     </Container>
   );
