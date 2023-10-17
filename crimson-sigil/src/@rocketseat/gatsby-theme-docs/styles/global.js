@@ -166,6 +166,7 @@ export default function GlobalStyle() {
         .stat {
             font-family: 'Exocet';
             letter-spacing: 0.001rem;
+            text-shadow: 0 0 15px ${theme.darkcolors.secondary}, 0 0 3px ${theme.darkcolors.primary};
         }
         .stat-value {
           font-size: 0.7em;

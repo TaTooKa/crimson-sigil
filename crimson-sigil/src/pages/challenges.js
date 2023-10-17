@@ -147,7 +147,7 @@ function Challenges() {
   }
 
   return (
-    <Layout title="CHALLENGES">
+    <Layout title="Challenges">
       <Seo title="Challenges" />
       <h2>CHALLENGE TRACKER</h2>
       <button id="add-challenge-button" onClick={addChallenge}>ADD CHALLENGE</button>
