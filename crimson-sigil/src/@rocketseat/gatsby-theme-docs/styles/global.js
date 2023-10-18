@@ -913,7 +913,7 @@ export default function GlobalStyle() {
                   span#questDescription {
                     display: flex;
                     padding: 5px 10px;
-                    font-family: 'EuroStyle';
+                    font-family: 'Alegreya';
                     font-weight: bold;
                     min-height: 35px;
                     font-size: 0.7em;
@@ -939,62 +939,6 @@ export default function GlobalStyle() {
                 }
             }
 
-            .angle-container {
-                margin: 30px 0 20px 0;
-                .angle-header {
-                    display: flex;
-                    .angle-title {
-                        display: block;
-                        width: 30%;
-                        font-size: 1.3em;
-                        float: left;
-                    }
-                    .angle-progress {
-                        display: flex;
-                        width: 60%;
-                        float: right;
-                        font-size: 1em;
-                        margin: 3px 0 0 auto;
-                        input {
-                            display: block;
-                            margin: -3px 0 0 10px;
-                            height: 30px;
-                            width: 45px;
-                        }
-                    }
-                }
-                .angle-options {
-                    margin: 10px 0 0 0;
-                    .columns {
-                        display: flex;
-                        margin: 5px 0 0 0;
-                    }
-                    .col input {
-                        display: none;
-                    }
-                    .col label {
-                        font-size: 0.7em;
-                        text-align: center;
-                        display: inline-block;
-                        width: 95%;
-                        padding: 6px 0 6px 0;
-                        border: 1px solid #444;
-                        border-radius: 15px;
-                        margin: 2px;
-                        transition: 0.5s;
-                        box-shadow: inset 0 0 5px #000;
-                    }
-                    .col input:checked+label {
-                        color: ${theme.darkcolors.primary};
-                        text-shadow: 0 0 10px ${theme.darkcolors.primary};
-                        box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
-                        border: 1px solid ${theme.darkcolors.primary};
-                        border-radius: 15px;
-                        transition: 0.5s;
-                    }
-                }
-            }
-            
             .notes-container {
                 margin: 5px 0 60px 0;
                 label {
