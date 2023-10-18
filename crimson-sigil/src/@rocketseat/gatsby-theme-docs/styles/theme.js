@@ -29,7 +29,7 @@ export default {
     text: `#ffffff`,
     components: {
       blockquote: {
-        background: `#504735ff`,
+        background: `#403829ff`,
         text: `#eeeeee`,
       },
       input: {

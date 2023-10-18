@@ -83,6 +83,22 @@ export default function GlobalStyle() {
           }
         }
 
+        body main nav {
+          ul {
+            li {
+              a {
+                color: ${theme.darkcolors.primary} !important;
+                -webkit-text-stroke: 0 !important;
+                transition: .5s;
+                text-shadow: 0 0 3px ${theme.darkcolors.primary_dark} !important;
+                :hover {
+                  text-shadow: 0 0 1px white, 0 0 10px ${theme.darkcolors.secondary} !important;
+                }
+              }
+            }
+          }
+        }
+
         body .dark {
           background-color: ${theme.darkcolors.background};
           color: ${theme.darkcolors.text};
@@ -165,6 +181,7 @@ export default function GlobalStyle() {
         .secondary {
             color: ${theme.darkcolors.secondary};
             -webkit-text-stroke: 1px ${theme.darkcolors.secondary_dark};
+            text-shadow: -1px -1px 1px #ffffff66, 0 0 5px ${theme.darkcolors.secondary}, 1px 1px 1px #000;
         }
 
         .bold {
@@ -176,8 +193,14 @@ export default function GlobalStyle() {
             letter-spacing: 0.001rem;
             text-shadow: 0 0 15px ${theme.darkcolors.secondary}, 0 0 3px ${theme.darkcolors.primary};
         }
+        .crimson-sigil-title {
+          font-family: 'Blackmoor';
+          color: ${theme.darkcolors.secondary};
+          text-shadow: 0 0 3px ${theme.darkcolors.secondary};
+          font-size: 1.2em;
+        }
         .stat-value {
-          font-size: 0.7em;
+          font-size: 0.8em;
           font-weight: bold;
           color: #888;
           margin: 0 0 0 3px;
@@ -212,6 +235,7 @@ export default function GlobalStyle() {
           text-decoration-style: dotted;
           text-decoration-color: ${theme.darkcolors.secondary};
           transition: 0.5s;
+          text-shadow: 0 0 5px ${theme.darkcolors.secondary};
 
           &:hover {
             text-decoration-style: dashed;
