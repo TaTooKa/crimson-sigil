@@ -1960,6 +1960,7 @@ export default function GlobalStyle() {
             overflow: hidden;
             word-wrap: break-word;
             white-space : pre-wrap !important;
+            background-color: ${theme.darkcolors.components.pre.background} !important;
           }
           code .token-line {
             margin: 5px 0 0 0;

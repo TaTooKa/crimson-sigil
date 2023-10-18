@@ -42,6 +42,9 @@ export default {
         border2: '#000000ff',
         border3: '#ffce2233',
         outline: '#ffce2244',
+      },
+      pre: {
+        background: '#2a211fff',
       }
     },
   },
