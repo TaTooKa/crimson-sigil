@@ -32,6 +32,13 @@ function CharacterStats() {
       const value = event.target.value;
       setInputs(values => ({...values, [name]: value}))
     }
+    if ( event.target.name == "quest" ) {
+      const name = "questDescription"
+      const value = event.target.alt;
+      var descriptionEl = document.getElementById('questDescription');
+      descriptionEl.innerHTML = value;
+      setInputs(values => ({...values, [name]: value}))
+    }
   }
 
   useEffect(() => {
@@ -162,30 +169,76 @@ function CharacterStats() {
 
         <div class="right-side">
 
-          <div class="angle-container">
-            <div class="angle-header">
-              <span class="angle-title">ANGLE</span>
-              <label class="angle-progress">PROGRESS <input type="number" name="angleProgress" value={inputs.angleProgress || ""} onChange={handleChange} min="1" max="99"/></label>
-            </div>
-            <div class="angle-options">
-              <span>Choose One:</span>
-              <div class="columns">
-                <div class="col left-col">
-                  <input id="angleInput1" type="radio" name="angle" value={inputs.angle1 || "Get Out"} onChange={handleChange} checked={inputs.angle==="Get Out"}/><label for="angleInput1"> Get Out</label>
-                  <input id="angleInput2" type="radio" name="angle" value={inputs.angle2 || "Upgrade Life"} onChange={handleChange} checked={inputs.angle==="Upgrade Life"}/><label for="angleInput2"> Upgrade Life</label>
-                  <input id="angleInput3" type="radio" name="angle" value={inputs.angle3 || "Learn The Truth"} onChange={handleChange} checked={inputs.angle==="Learn The Truth"}/><label for="angleInput3"> Learn The Truth</label>
+          <div class="character-arc-container">
+
+              <div class="character-arc-header">
+                <span class="character-arc-title">CHARACTER ARC</span>
+              </div>
+
+              <div class="quest-container arc-container">
+                <span class="quest-title arc-subtitle">Personal Quest</span>
+                <label class="quest-progress arc-progress">PROGRESS <input type="number" name="questProgress" value={inputs.questProgress || ""} onChange={handleChange} min="1" max="99"/></label>
+
+                <div class="quest-options">
+                  <span class="quest-subtitle">Choose One:</span>
+                  <div class="columns">
+                    <div class="col left-col">
+                      <input id="questInput1" type="radio" name="quest" value={inputs.quest1 || "Revenge"} onChange={handleChange} checked={inputs.quest==="Revenge"} alt="An individual or faction wronged you in some way. You will make'em pay for it."/><label for="questInput1"> Revenge</label>
+                      <input id="questInput2" type="radio" name="quest" value={inputs.quest2 || "Heirloom"} onChange={handleChange} checked={inputs.quest==="Heirloom"} alt="Something (an object of symbolic significance or with true power) belongs to you by right or heritage. You must reclaim it, wherever it is."/><label for="questInput2"> Heirloom</label>
+                      <input id="questInput3" type="radio" name="quest" value={inputs.quest3 || "Birthright"} onChange={handleChange} checked={inputs.quest==="Birthright"} alt="You have a claim to something important (a position, a deed, a legacy, some sort of power) that you must reach or redeem."/><label for="questInput3"> Birthright</label>
+                      <input id="questInput4" type="radio" name="quest" value={inputs.quest4 || "Heroism"} onChange={handleChange} checked={inputs.quest==="Heroism"} alt="A great evil must be thwarted. The Innocent and the weak must be protected or saved. Peace must be reclaimed. You are the one who can do it."/><label for="questInput4"> Heroism</label>
+                      <input id="questInput5" type="radio" name="quest" value={inputs.quest5 || "Rescue"} onChange={handleChange} checked={inputs.quest==="Rescue"} alt="Someone has been captured or lost. You must rescue them, or no one else will."/><label for="questInput5"> Rescue</label>
+                      <input id="questInput6" type="radio" name="quest" value={inputs.quest6 || "Empowerment"} onChange={handleChange} checked={inputs.quest==="Empowerment"} alt="either out of selfishness or for the benefit of others, you need to achieve greater power by doing something that will make you supreme among others."/><label for="questInput6"> Empowerment</label>
+                      <input id="questInput7" type="radio" name="quest" value={inputs.quest7 || "Recognition"} onChange={handleChange} checked={inputs.quest==="Recognition"} alt="Honor and virtue are on your destiny, but that's not enough: You need for it to be known, becoming famous and recognized for your deeds across all of the land."/><label for="questInput7"> Recognition</label>
+                    </div>
+                    <div class="col right-col">
+                      <input id="questInput8" type="radio" name="quest" value={inputs.quest8 || "Enrichment"} onChange={handleChange} checked={inputs.quest==="Enrichment"} alt="Either out of pure greed, or as a means to an end, you want to become rich and have a life full of luxuries."/><label for="questInput8"> Enrichment</label>
+                      <input id="questInput9" type="radio" name="quest" value={inputs.quest9 || "Conquest"} onChange={handleChange} checked={inputs.quest==="Conquest"} alt="The fate of a region or faction cannot be left to their own whims. You know better; you must subdue and control it from the top."/><label for="questInput9"> Conquest</label>
+                      <input id="questInput10" type="radio" name="quest" value={inputs.quest10 || "Love"} onChange={handleChange} checked={inputs.quest==="Love"} alt="You are focused on a loved one; either a familiar bond or a romantic interest. You must win their love, nurture that relationship or protect it from something."/><label for="questInput10"> Love</label>
+                      <input id="questInput11" type="radio" name="quest" value={inputs.quest11 || "Belief"} onChange={handleChange} checked={inputs.quest==="Belief"} alt="You have an ideology or dogma that you consider ideal, but most others don't share it. You must convince, proselitize or forcefully impose it until the majority accepts and embraces it."/><label for="questInput11"> Belief</label>
+                      <input id="questInput12" type="radio" name="quest" value={inputs.quest12 || "Justice"} onChange={handleChange} checked={inputs.quest==="Justice"} alt="Some laws are sacred, and everyone must abide to them. Your code might seem extreme or too radical, but you must enforce it until it is the rule of the land."/><label for="questInput12"> Justice</label>
+                      <input id="questInput13" type="radio" name="quest" value={inputs.quest13 || "Duty"} onChange={handleChange} checked={inputs.quest==="Duty"} alt="You are bound to some sort of code or service (an organization, a religion, an order) and you firmly believe in it. You must pursue your obligation until the final objective (usually idealistic and utopic) is achieved."/><label for="questInput13"> Duty</label>
+                      <input id="questInput14" type="radio" name="quest" value={inputs.quest14 || "Debt"} onChange={handleChange} checked={inputs.quest==="Debt"} alt="You owe something important (probably your life) to someone you admire and will do whatever it takes to repay that great favor."/><label for="questInput14"> Debt</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="col right-col">
-                  <input id="angleInput4" type="radio" name="angle" value={inputs.angle4 || "Make'em Pay"} onChange={handleChange} checked={inputs.angle==="Make'em Pay"}/><label for="angleInput4"> Make'em Pay</label>
-                  <input id="angleInput5" type="radio" name="angle" value={inputs.angle5 || "Look After Them"} onChange={handleChange} checked={inputs.angle==="Look After Them"}/><label for="angleInput5"> Look After Them</label>
-                  <input id="angleInput6" type="radio" name="angle" value={inputs.angle6 || "Take A Stand"} onChange={handleChange} checked={inputs.angle==="Take A Stand"}/><label for="angleInput6"> Take A Stand</label>
+                <div class="quest-description-container">
+                  <span role="textbox" name="questDescription" id="questDescription">{inputs.questDescription || "N/A"}</span>
+                </div>
+                <div class="quest-notes-container">
+                  <label class="quest_notes">PERSONAL QUEST NOTES (Who? What?)<textarea name="questNotes" value={inputs.questNotes || ""} onChange={handleChange} /></label>
                 </div>
               </div>
+
+              <div class="exploration-container arc-container">
+                <div class="arc-subtitle">
+                  <span class="exploration-title">Exploration</span><br/>
+                  <span class="arc-sub-subtitle">& Discoveries</span>
+                </div>
+                <div>
+                  <label class="exploration-progress arc-progress">PROGRESS <input type="number" name="explorationProgress" value={inputs.explorationProgress || ""} onChange={handleChange} min="1" max="99"/></label>
+                </div>
+                <div class="exploration-notes-container">
+                  <label class="exploration_notes">EXPLORATION & DISCOVERIES NOTES<textarea name="explorationNotes" value={inputs.explorationNotes || ""} onChange={handleChange} /></label>
+                </div>
+              </div>
+
+              <div class="companionship-container arc-container">
+                <div class="arc-subtitle">
+                  <span class="companionship-title">Companionship</span><br/>
+                  <span class="arc-sub-subtitle">& Alliances</span>
+                </div>
+                <label class="companionship-progress arc-progress">PROGRESS <input type="number" name="companionshipProgress" value={inputs.companionshipProgress || ""} onChange={handleChange} min="1" max="99"/></label>
+
+                <div class="companionship-notes-container">
+                  <label class="companionship_notes">COMPANIONS AND ALLIANCES NOTES<textarea name="companionshipNotes" value={inputs.companionshipNotes || ""} onChange={handleChange} /></label>
+                </div>
+              </div>
+
             </div>
-          </div>
 
           <div class="notes-container">
-            <label class="equipment_notes">EQUIPMENT + NOTES <textarea name="notes" value={inputs.notes || ""} onChange={handleChange} /></label>
+            <label class="equipment_notes">EQUIPMENT + OTHER NOTES <textarea name="notes" value={inputs.notes || ""} onChange={handleChange} /></label>
           </div>
 
         </div>

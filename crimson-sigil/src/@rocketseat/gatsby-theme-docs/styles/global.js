@@ -758,6 +758,187 @@ export default function GlobalStyle() {
               box-shadow: inset 0 0 5px #000;
             }
 
+            .character-arc-container {
+                margin: 30px 0 20px 0;
+                padding: 5px 10px;
+                border: 1px solid ${theme.darkcolors.primary_dark};
+                box-shadow: inset 0 0 5px ${theme.darkcolors.primary_dark};
+                border-radius: 10px;
+                .character-arc-header {
+                    display: flex;
+                    .character-arc-title {
+                        display: block;
+                        width: 100%;
+                        font-size: 1.3em;
+                        float: left;
+                    }
+                }
+                .arc-container {
+                  display: block;
+                  margin: 5px 0 15px 0;
+                  padding: 10px 5px;
+                  border: 1px solid #444;
+                  min-height: 50px;
+                  box-shadow: inset 0 0 5px #000, 0 0 10px #000;
+                  border-radius: 5px;
+                  .arc-subtitle {
+                    font-family: 'Blackmoor';
+                    height: 30px;
+                    display: block;
+                    padding: 5px 3px;
+                    width: 70%;
+                    font-size: 1.2em;
+                    float: left;
+                    text-shadow: 0 0 3px ${theme.darkcolors.secondary}, 2px 2px 2px #000;
+                  }
+                  .arc-progress {
+                    display: flex;
+                    width: 30%;
+                    float: left;
+                    font-size: 0.6em;
+                    margin: 12px 0 0 -35px;
+                    input {
+                        display: block;
+                        margin: -10px 0 0 10px;
+                        height: 30px;
+                        width: 55px;
+                        border-radius: 5px;
+                    }
+                  }
+
+                }
+                .companionship-container {
+                  height: 250px;
+                  .companionship-title {
+                    font-size: 1em;
+                  }
+                  .arc-sub-subtitle {
+                    font-size: .9em;
+                  }
+                  .companionship-notes-container {
+                    margin: 50px auto 20px auto;
+                    width: 95%;
+                    label {
+                      display: block;
+                        float: left;
+                      font-size: 0.8em;
+                      margin: 35px 0 0 5px;
+                        color: #ffffff66;
+                      textarea {
+                        display: block;
+                        margin: 10px 0 0 0;
+                        width: 100%;
+                        min-height: 100px;
+                        min-width: 100%;
+                      }
+                    }
+                  }
+                }
+                .exploration-container {
+                  height: 260px;
+                  .exploration-title {
+                    font-family: 'Blackmoor';
+                    font-size: 1.1em;
+                  }
+                  .arc-sub-subtitle {
+                    font-family: 'Blackmoor';
+                    font-size: 1em;
+                  }
+                  .exploration-notes-container {
+                    margin: 50px auto 20px auto;
+                    width: 95%;
+                    label {
+                      display: block;
+                      float: left;
+                      font-size: 0.8em;
+                      margin: 45px 0 0 5px;
+                      color: #ffffff66;
+                      textarea {
+                        display: block;
+                        margin: 10px 0 0 0;
+                        width: 100%;
+                        min-height: 100px;
+                        min-width: 100%;
+                      }
+                    }
+                  }
+                }
+                .quest-options {
+                  display: block;
+                  margin: 10px 0 0 0;
+                  .quest-subtitle {
+                    display: block;
+                    margin: 40px 0 0 0;
+                  }
+                  .columns {
+                      display: flex;
+                      margin: 5px 0 0 0;
+                  }
+                  .col {
+                    width: 50%;
+                  }
+                  .col input {
+                      display: none;
+                  }
+                  .col label {
+                      font-size: 0.7em;
+                      text-align: center;
+                      display: inline-block;
+                      width: 95%;
+                      padding: 6px 0 6px 0;
+                      border: 1px solid #444;
+                      border-radius: 15px;
+                      margin: 2px;
+                      transition: 0.5s;
+                      box-shadow: inset 0 0 5px #000;
+                  }
+                  .col input:checked+label {
+                      color: ${theme.darkcolors.primary};
+                      text-shadow: 0 0 10px ${theme.darkcolors.primary};
+                      box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
+                      border: 1px solid ${theme.darkcolors.primary};
+                      border-radius: 15px;
+                      transition: 0.5s;
+                  }
+                }
+                .quest-description-container {
+                  margin: 10px auto 30px auto;
+                  display: flex;
+                  width: 95%;
+                  background-color: ${theme.darkcolors.components.input.background};
+                  border: 1px solid #444;
+                  border-radius: 5px;
+                  box-shadow: inset 0 0 5px #000;
+
+                  span#questDescription {
+                    display: flex;
+                    padding: 5px 10px;
+                    font-family: 'EuroStyle';
+                    font-weight: bold;
+                    min-height: 35px;
+                    font-size: 0.7em;
+                    color: ${theme.darkcolors.components.input.text};
+                    transition: 1s;
+                  }
+                }
+                .quest-notes-container {
+                  margin: 10px auto 20px auto;
+                  width: 95%;
+                  label {
+                    display: block;
+                    font-size: 0.8em;
+                    color: #ffffff66;
+                    textarea {
+                      display: block;
+                      margin: 10px 0 0 0;
+                      width: 100%;
+                      min-height: 100px;
+                      min-width: 100%;
+                    }
+                  }
+                }
+            }
+
             .angle-container {
                 margin: 30px 0 20px 0;
                 .angle-header {
