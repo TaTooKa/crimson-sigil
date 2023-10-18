@@ -67,12 +67,20 @@ export default function GlobalStyle() {
         body {
           font-size: 22px;
           font-family: ${theme.fonts.body};
-          ${'' /* background-color: ${theme.colors.background}; */}
           background-color: ${theme.darkcolors.background};
           text-rendering: optimizelegibility;
           -webkit-font-smoothing: antialiased;
           overflow-y: scroll;
           letter-spacing: 0.05em;
+        }
+
+        body main header {
+          margin-bottom: 35px !important;
+          .title {
+            width: 250px;
+            margin: 20px auto 0 auto;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+          }
         }
 
         body .dark {
@@ -245,10 +253,14 @@ export default function GlobalStyle() {
         }
 
         hr {
+          height: 8px;
+          background-image: linear-gradient(
+            90deg, 
+            transparent, 
+            ${theme.darkcolors.primary_dark}, 
+            transparent);
           border: 0;
-          height: 0;
-          border-top: 1px solid rgba(0, 0, 0, 0.1);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          height: 1px;
         }
 
         table {
@@ -314,7 +326,7 @@ export default function GlobalStyle() {
         }
 
         img.art {
-          border: 1px solid #0a6d61;
+          border: 1px solid ${theme.darkcolors.primary_dark};
           border-radius: 0 15px 0 15px;
           margin: 15px auto 5px auto;
           width: 100%;
@@ -796,11 +808,11 @@ export default function GlobalStyle() {
         }
 
         div.active-traits {
-          border: 1px solid #0a6d61;
+          border: 1px solid ${theme.darkcolors.primary_dark};
           padding: 10px 20px;
           border-radius: 0 15px 0 15px;
           span#active-traits-title {
-            color: #0a6d61;
+            color: ${theme.darkcolors.primary_dark};
             font-size: 0.9em;
             font-weight: bold;
           }
@@ -811,16 +823,15 @@ export default function GlobalStyle() {
 
         form.character-traits {
           .trait {
-            border: 1px solid #0a6d6166;
+            border: 1px solid ${theme.darkcolors.primary_darker};
             margin: 10px 0 25px 0;
-            ${'' /* padding: 10px 0; */}
             padding: 20px;
             transition: 0.5s;
             opacity: 0.9;
             :has(input:checked) {
               opacity: 1;
-              border: 1px solid #0a6d61ff;
-              box-shadow: inset 0 0 100px #0a6d61ff;
+              border: 1px solid ${theme.darkcolors.primary};
+              box-shadow: inset 0 0 100px ${theme.darkcolors.primary};
             }
             input[type="checkbox"] {
               appearance: none;

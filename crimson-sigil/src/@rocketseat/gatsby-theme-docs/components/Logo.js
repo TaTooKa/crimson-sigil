@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Path to the logo file on your project
-import cybrdystopialogo from './assets/logo.png';
+import crimsonsigillogo from './assets/title.png';
 
 const Logo = () => (
-  <img src={cybrdystopialogo} alt="cybrdystopia logo" style={{ width: 180 }} />
+  <img src={crimsonsigillogo} alt="crimson sigil logo" style={{ width: 200, margin: "0 0 0 10px" }} />
 );
 
 export default Logo;

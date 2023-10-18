@@ -24,7 +24,7 @@ export default {
     secondary: '#bb0002ff',
     secondary_dark: '#590001ff',
     background: '#1e1512ff',
-    shape: `#131313`,
+    shape: `#100802ff`,
     title: `#bfbfbf`,
     text: `#ffffff`,
     components: {
