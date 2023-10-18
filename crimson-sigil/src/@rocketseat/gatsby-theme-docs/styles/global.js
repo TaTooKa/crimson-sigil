@@ -351,7 +351,7 @@ export default function GlobalStyle() {
 
         img.art {
           border: 1px solid ${theme.darkcolors.primary_dark};
-          border-radius: 0 15px 0 15px;
+          border-radius: 5px;
           margin: 15px auto 5px auto;
           width: 100%;
           transition: 0.5s;
