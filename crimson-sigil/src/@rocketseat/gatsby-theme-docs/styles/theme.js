@@ -20,6 +20,7 @@ export default {
   darkcolors: {
     primary: '#ffce22ff',
     primary_dark: '#8e6f02ff',
+    primary_darker: '#463a24ff',
     secondary: '#bb0002ff',
     secondary_dark: '#590001ff',
     background: '#1e1512ff',
@@ -28,7 +29,7 @@ export default {
     text: `#ffffff`,
     components: {
       blockquote: {
-        background: `#2d3748`,
+        background: `#504735ff`,
         text: `#eeeeee`,
       },
       input: {

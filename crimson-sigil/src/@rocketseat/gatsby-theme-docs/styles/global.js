@@ -1573,47 +1573,40 @@ export default function GlobalStyle() {
         ${'' /* BOOST EFFECT */}
         span.boost {
           display: inline-block;
-          font-size: 1em;
-          font-weight: bold;
+          font-size: 1.2em;
+          font-family: 'Exocet';
+          letter-spacing: -.1em;
+          transform: scale(.95, 1) translate(0, .05em);
+          color: #ffffff22;
           background-image: linear-gradient(
             -40deg, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,0) 40%, 
+            #ffffff66 0%, 
+            #ffffff00 40%, 
             #fff 50%, 
-            rgba(255,255,255,0) 60%, 
-            rgba(255,255,255,0) 100%
+            #ffffff00 60%, 
+            #ffffff66 100%
           );
-          color: rgba(255, 255, 255, 0.1);
           -webkit-background-size: 50px;
+          background-size: 50px;
           -webkit-background-clip: text;
           -webkit-animation-name: shine;
-          -webkit-animation-duration: 15s;
-          -webkit-animation-iteration-count: infinite;
-          background-size: 50px;
           animation-name: shine;
+          -webkit-animation-duration: 15s;
           animation-duration: 15s;
+          -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-          text-shadow: 0 0 0 #0cffe166;
-          ${'' /* -webkit-text-stroke: 1px #ffffff11; */}
         }
 
         @-webkit-keyframes shine {
           0%, 10% {
             background-position: 200px;
-            text-shadow: 0 0 0 #0cffe166;
-            transform: skew(0deg);
           }
           50% {
-            text-shadow: 0 0 0 #0cffe188;
-            transform: skew(-10deg);
           }
           75% {
-            text-shadow: 0 0 0 #0cffe166;
-            transform: skew(-5deg);
           }
           100% {
             background-position: -200px;
-            transform: skew(0deg);
           }
         }
 
