@@ -1332,9 +1332,11 @@ export default function GlobalStyle() {
           display: inline-block;
           position: relative;
           color: white;
-          font-size: 1em;
+          font-size: 1.2em;
+          font-family: 'Exocet';
+          letter-spacing: -.1em;
+          transform: scale(.95, 1) translate(0, .05em);
           font-weight: bold;
-          letter-spacing: 0.1em;
           animation: glitch-skew 1s infinite linear alternate-reverse;
           text-shadow: 0 0 15px ${theme.darkcolors.secondary}, 0 0 3px #fff;
         }
@@ -1577,7 +1579,7 @@ export default function GlobalStyle() {
           font-family: 'Exocet';
           letter-spacing: -.1em;
           transform: scale(.95, 1) translate(0, .05em);
-          color: #ffffff22;
+          color: ${theme.darkcolors.components.boost.background};
           background-image: linear-gradient(
             -40deg, 
             #ffffff66 0%, 
@@ -1586,13 +1588,17 @@ export default function GlobalStyle() {
             #ffffff00 60%, 
             #ffffff66 100%
           );
+          text-shadow: 0 0 2px ${theme.darkcolors.components.boost.border}, 
+          0 0 3px ${theme.darkcolors.components.boost.border2}, 
+          0 0 5px ${theme.darkcolors.components.boost.border3};
+          -webkit-text-stroke: 1px ${theme.darkcolors.components.boost.outline};
           -webkit-background-size: 50px;
           background-size: 50px;
           -webkit-background-clip: text;
           -webkit-animation-name: shine;
           animation-name: shine;
-          -webkit-animation-duration: 15s;
-          animation-duration: 15s;
+          -webkit-animation-duration: 40s;
+          animation-duration: 40s;
           -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
         }

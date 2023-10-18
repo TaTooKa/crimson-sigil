@@ -35,6 +35,13 @@ export default {
       input: {
         background: `#060b15`,
         text: `#ffffff`,
+      },
+      boost: {
+        background: '#ffce2266',
+        border: '#463a2488',
+        border2: '#000000ff',
+        border3: '#ffce2233',
+        outline: '#ffce2244',
       }
     },
   },
