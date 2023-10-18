@@ -33,7 +33,7 @@ export default {
         text: `#eeeeee`,
       },
       input: {
-        background: `#060b15`,
+        background: `#0e0904ff`,
         text: `#ffffff`,
       },
       boost: {

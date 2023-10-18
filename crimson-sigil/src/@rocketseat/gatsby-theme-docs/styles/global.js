@@ -89,7 +89,7 @@ export default function GlobalStyle() {
         }
 
         h1 {
-          font-size: 1.6em;
+          font-size: 2em;
           color: ${theme.colors.title};
           font-weight: bold;
           margin-bottom: 24px;
@@ -136,7 +136,7 @@ export default function GlobalStyle() {
           font-size: 1.2em;
           color: ${theme.darkcolors.text};
           -webkit-text-stroke: 1px #000;
-          text-shadow: 0 0 10px ${theme.darkcolors.primary}, 2px 2px 5px #000;
+          text-shadow: 0 0 5px ${theme.darkcolors.primary}, 0px 7px 4px #000;
 
           .anchor svg {
             box-shadow: inset 0 0 10px ${theme.darkcolors.primary};
@@ -559,8 +559,8 @@ export default function GlobalStyle() {
                 background-color: ${theme.darkcolors.components.input.background};
                 font-family: 'Alegreya';
                 font-weight: bold;
-                border: 1px solid ${theme.darkcolors.primary};
-                border-radius: 0 20px 0 3px;
+                border: 3px ridge ${theme.darkcolors.primary_dark};
+                border-radius: 5px;
                 color: ${theme.darkcolors.components.input.text};
                 transition: 3s;
             }
@@ -578,8 +578,8 @@ export default function GlobalStyle() {
                 font-weight: bold;
                 font-size: 0.8em;
                 padding: 3px 5px;
-                border: 1px solid ${theme.darkcolors.primary};
-                border-radius: 0 10px 0 3px;
+                border: 3px ridge ${theme.darkcolors.primary_dark};
+                border-radius: 5px;
                 transition: 1s;
             }
 
@@ -669,7 +669,7 @@ export default function GlobalStyle() {
                             display: inline-block;
                             width: 200px;
                             text-align: right;
-                            text-shadow: 0 0 5px #aaa;
+                            text-shadow: 0 0 15px ${theme.darkcolors.secondary};
                         }
                         input {
                             height: 30px;
@@ -936,7 +936,7 @@ export default function GlobalStyle() {
 
         button#add-challenge-button {
           border: 1px solid ${theme.darkcolors.primary};
-          height: 30px;
+          height: 35px;
           padding: 5px 10px;
           font-family: 'Alegreya';
           font-size: 0.8em;
@@ -970,8 +970,8 @@ export default function GlobalStyle() {
 
           .challenge-container {
             margin: 30px 0 30px 0;
-            border: 1px solid #0a6d6199;
-            border-radius: 5px 15px 5px 5px;
+            border: 1px solid ${theme.darkcolors.primary_darker};
+            border-radius: 5px;
             padding: 15px 5px;
             transition: 1.5s ease-out;
             &.created {
@@ -1278,18 +1278,18 @@ export default function GlobalStyle() {
           .challenge-deleted-anim {
             transition: .5s ease-out;
             margin: 30px 0 30px 0;
-            border: 1px solid #0a6d6199;
-            border-radius: 5px 15px 5px 5px;
+            border: 1px solid ${theme.darkcolors.primary_darker};
+            border-radius: 5px;
             box-shadow: inset 0 0 5px #000;
             padding: 15px 5px;
             text-align: center;
             vertical-align: middle;
             background: linear-gradient(
-              ${theme.darkcolors.secondary},
+              ${theme.darkcolors.secondary_dark},
               #000,
-              ${theme.darkcolors.secondary},
+              ${theme.darkcolors.secondary_dark},
               #000,
-              ${theme.darkcolors.secondary}
+              ${theme.darkcolors.secondary_dark}
             )
             0 0/100% 200%;
             background-size: 100% 20%;
@@ -1703,7 +1703,7 @@ export default function GlobalStyle() {
               padding: 5px 6px 4px 9px;
               font-family: 'Alegreya';
               font-weight: bold;
-              border: 1px solid ${theme.darkcolors.primary};
+              border: 1px solid ${theme.darkcolors.primary_dark};
               border-radius: 3px 0 0 3px;
               min-height: 35px;
               font-size: 1em;
