@@ -85,7 +85,7 @@ const miscOracleResults = {
         "Net connection keeps dropping out",
         "Incompatible operating system",
         "Pop-up pandemic",
-        "Software conflicts, glitchy",
+        "Software conflicts, setbacky",
         "Processor overclocked",
         "Active ‘vigilance suite’ warns user",
         "Tendency to stall or hang",

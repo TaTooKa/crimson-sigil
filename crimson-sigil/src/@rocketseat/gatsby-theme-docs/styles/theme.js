@@ -43,6 +43,13 @@ export default {
         border3: '#ffce2233',
         outline: '#ffce2244',
       },
+      setback: {
+        background: '#c0002699',
+        border: '#c0002688',
+        border2: '#000000ff',
+        border3: '#00000066',
+        outline: '#bb000244',
+      },
       pre: {
         background: '#2a211fff',
       }

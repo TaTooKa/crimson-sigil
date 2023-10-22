@@ -182,7 +182,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait name="HalfFiend" title="HALF-FIEND" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-              <span>You are the spawn of a human and a denizen of deviltry like a Vampire, Demon, Incubus / Succubus, etc. Your evil heritage manifests mildly; both their weaknesses and strengths. Choose a vulnerability you inherited (sunlight, holy symbols, silver, etc): You gain a GLITCH whenever you are exposed to or affected by it. Also choose a boon you get (superhuman strength, agility or resistance, invulnerability to an element or source, a specific power, etc): You gain a BOOST whenever you harness it for any action, but you must ENDURE STRESS (minor) whenever you do.</span>
+              <span>You are the spawn of a human and a denizen of deviltry like a Vampire, Demon, Incubus / Succubus, etc. Your evil heritage manifests mildly; both their weaknesses and strengths. Choose a vulnerability you inherited (sunlight, holy symbols, silver, etc): You gain a SETBACK whenever you are exposed to or affected by it. Also choose a boon you get (superhuman strength, agility or resistance, invulnerability to an element or source, a specific power, etc): You gain a BOOST whenever you harness it for any action, but you must ENDURE STRESS (minor) whenever you do.</span>
             </Trait>
 
             <Trait name="Ironclad" title="IRONCLAD" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
@@ -222,7 +222,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait name="Shapeshifter" title="SHAPESHIFTER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-              <span>You can turn partially or completely into a specific animal of your choice (selected when you gain this trait). If you partially turn a body part, you gain a BOOST to any action that tests either MIGHT, HASTE or GUILE (your choice, depending on the nature of the transformation), but gain a GLITCH to either WITS or CHARM. This effect lasts a whole scene. If you completely shapeshift into the animal form, you gain a BOOST to two of those stats of your choice, but also gain a GLITCH to both WITS and CHARM for the remainder of the scene. While in animal form, you can do anything the creature could normally do, but lose any human physical abilities (like speaking, using opposable thumbs, etc). Additionally, at every full moon, you turn uncontrollably into ful animal form and surrender to your most basic instincts (gaining a GLITCH to any WITS or CHARM test to resist your primal urges).</span>
+              <span>You can turn partially or completely into a specific animal of your choice (selected when you gain this trait). If you partially turn a body part, you gain a BOOST to any action that tests either MIGHT, HASTE or GUILE (your choice, depending on the nature of the transformation), but gain a SETBACK to either WITS or CHARM. This effect lasts a whole scene. If you completely shapeshift into the animal form, you gain a BOOST to two of those stats of your choice, but also gain a SETBACK to both WITS and CHARM for the remainder of the scene. While in animal form, you can do anything the creature could normally do, but lose any human physical abilities (like speaking, using opposable thumbs, etc). Additionally, at every full moon, you turn uncontrollably into ful animal form and surrender to your most basic instincts (gaining a SETBACK to any WITS or CHARM test to resist your primal urges).</span>
             </Trait>
 
             <Trait name="ShieldBearer" title="SHIELD-BEARER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
@@ -287,7 +287,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait name="HybridGuardian" title="HYBRID GUARDIAN" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-              <span>You belong to a secretive order of guardians that, in order to protect mankind, mutate themselves into fiendish hybrids. You can use demonic powers and even temporarily reshape parts of your body, which gives a BOOST to any action at the cost of losing -1 WILL each time. At the end of the fray, or when you decide to return back to normal, you must ENDURE serious STRESS with a GLITCH to avoid the temptation of succumbing and transforming into that which you’ve sworn to fight.</span>
+              <span>You belong to a secretive order of guardians that, in order to protect mankind, mutate themselves into fiendish hybrids. You can use demonic powers and even temporarily reshape parts of your body, which gives a BOOST to any action at the cost of losing -1 WILL each time. At the end of the fray, or when you decide to return back to normal, you must ENDURE serious STRESS with a SETBACK to avoid the temptation of succumbing and transforming into that which you’ve sworn to fight.</span>
               <br/><br/><hr/><br/>
               <p>Acquired when <i>you submit yourself to the forbidden rite of transformation in which demonic blood is transfused into your body</i>.</p>
             </Trait>
