@@ -993,20 +993,18 @@ export default function GlobalStyle() {
               border-radius: 3px;
               box-shadow: 0 0 5px #000;
               font-family: 'Exocet';
+              cursor: pointer;
             }
           }
           .trait {
-            border: 1px solid ${theme.darkcolors.primary_darker};
             margin: 10px 0 25px 0;
             padding: 20px;
             transition: 1s;
             opacity: 0.9;
-            :has(input:checked) {
-              opacity: 1;
-              border: 1px solid ${theme.darkcolors.primary};
-              box-shadow: inset 0 0 100px ${theme.darkcolors.primary};
-            }
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px ${theme.darkcolors.components.blockquote.background};
             input[type="checkbox"] {
+              cursor: pointer;
               appearance: none;
               width: 16px;
               height: 16px;
@@ -1035,6 +1033,7 @@ export default function GlobalStyle() {
               }
             }
             label {
+              cursor: pointer;
               line-height: 1.32em;
               .stat {
                 font-size: 0.9em;
@@ -1060,6 +1059,10 @@ export default function GlobalStyle() {
               box-shadow: 0 0 5px ${theme.darkcolors.secondary}; 
               filter: brightness(1);
             }
+          }
+          .trait.active {
+              box-shadow: inset 0 0 10px #000, inset 0 0 150px ${theme.darkcolors.components.blockquote.background};
+              opacity: 1;
           }
           .trait.invisible {
             opacity: 0;

@@ -62,9 +62,14 @@ function CharacterStats() {
 
   const [inputs, setInputs] = useState(() => {
     const savedTraitsStr = windowGlobal ? windowGlobal.localStorage.getItem("traits") : "{}"
-    const savedTraits = JSON.parse(savedTraitsStr)
-    return savedTraits || {
+    let savedTraits = JSON.parse(savedTraitsStr)
+    if ( !savedTraits ) {
+      savedTraits = {};
     }
+    if ( !savedTraits['trait-toggle']) {
+      savedTraits['trait-toggle'] = 'toggleVisibilityAll';
+    }
+    return savedTraits;
   })
 
   const handleChange = (event) => {
