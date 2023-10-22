@@ -2,6 +2,8 @@ import React, { useState, useEffect, Component } from "react"
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
+import Trait from '/src/@rocketseat/gatsby-theme-docs/components/Trait'
+
 import placeholder_art from '/src/images/placeholder.jpg';
 
 function CharacterStats() {
@@ -81,16 +83,14 @@ function CharacterStats() {
 
       <form class="character-traits">
 
-        <div class="traits-container" id="skills-container">
+        <div class="traits-container" id="general-traits-container">
             <h2 id="general-traits">GENERAL TRAITS</h2>
 
             <blockquote><p>General Traits can be obtained during Character Creation and any time you desire to <a href="/prompts/fate-prompts#improve-yourself">IMPROVE YOURSELF</a> and pay for a new one with XP.</p></blockquote>
 
-            <div class="trait skill">
-                <input id="skillBlademaster" type="checkbox" name="skillBlademaster" value={inputs.skillBlademaster} onChange={handleChange} defaultChecked={inputs.skillBlademaster}/>
-                <label for="skillBlademaster"> <span class="trait-name">BLADEMASTER</span>: when wielding a long blade, gain a <span class="boost">BOOST</span> when you test your <span class="stat">MIGHT</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</label>
-                <img src={placeholder_art} class="art"/>
-            </div>
+            <Trait name="Blademaster" title="BLADEMASTER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+              <span>when wielding a long blade, gain a <span class="boost">BOOST</span> when you test your <span class="stat">MIGHT</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</span>
+            </Trait>
 
         </div>
 
@@ -98,16 +98,16 @@ function CharacterStats() {
         <hr/>
         <br/>
 
-        <div class="traits-container" id="skills-container">
+        <div class="traits-container" id="prestige-traits-container">
             <h2 id="prestige-traits">PRESTIGE TRAITS</h2>
 
-            <blockquote><p>These TRAITS cannot be obtained normally by paying XP. They each have a condition that must be achieved, usually by <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILLING A CHALLENGE</a> (of LONG RANK or greater) that had said condition as its objective.<br/><br/>Players are encouraged to actively pursue different objectives of their own volition, in order to gain some of these Prestige Traits.</p></blockquote>
+            <blockquote><p>These TRAITS cannot be obtained normally by paying XP. They each have a condition that must be achieved, usually by <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILLING A CHALLENGE</a> (of LONG RANK or greater) that had said condition as its objective or consequence.<br/><br/>Players are encouraged to actively pursue different objectives of their own volition, in order to gain some of these Prestige Traits.</p></blockquote>
 
-            <div class="trait skill">
-                <input id="skillBlademaster" type="checkbox" name="skillBlademaster" value={inputs.skillBlademaster} onChange={handleChange} defaultChecked={inputs.skillBlademaster}/>
-                <label for="skillBlademaster"> <span class="trait-name">BLADEMASTER</span>: when wielding a long blade, gain a <span class="boost">BOOST</span> when you test <span class="stat">MIGHT</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</label>
-                <img src={placeholder_art} class="art"/>
-            </div>
+            <Trait name="DemonSlayer" title="DEMON SLAYER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>when wielding a long blade, gain a <span class="boost">BOOST</span> when you test <span class="stat">MIGHT</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</span>
+                <br/><br/><hr/><br/>
+                <p>Acquired when <i>you slay a powerful demon tormenting a place or a community</i>.</p>
+            </Trait>
 
         </div>
 
