@@ -56,6 +56,10 @@ function CharacterStats() {
     {depth: 3, value: "WILDWARDEN"},
 ]
 
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
   const [inputs, setInputs] = useState(() => {
     const savedTraitsStr = windowGlobal ? windowGlobal.localStorage.getItem("traits") : "{}"
     const savedTraits = JSON.parse(savedTraitsStr)
@@ -71,6 +75,9 @@ function CharacterStats() {
     } else {
         const name = event.target.name;
         const value = event.target.value;
+        if ( name == "trait-toggle") {
+          toggleVisibility(event.target.id);
+        }
         setInputs(values => ({...values, [name]: value}))
     }
   }
@@ -112,6 +119,30 @@ function CharacterStats() {
     }
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("activeTraits", activeTraits);
+      toggleVisibility(inputs['trait-toggle']);
+    }
+  }
+
+  async function toggleVisibility(setting) {
+    console.log('toggling...', setting);
+    if ( setting == "toggleVisibilityAll") {
+      var elements = document.getElementsByClassName('trait');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = 'block';
+      }
+      await delay(200);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('invisible');
+      }
+    } else {
+      var elements = document.getElementsByClassName('trait inactive');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add('invisible');
+      }
+      await delay(600);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = 'none';
+      }
     }
   }
 
@@ -124,6 +155,11 @@ function CharacterStats() {
       </div>
 
       <form class="character-traits">
+
+        <div id="toggle-visibility-container">
+          <input id="toggleVisibilityAll" class="toggleVisibilityInput" type="radio" name="trait-toggle" value={inputs.toggleVisibilityAll || "toggleVisibilityAll"} onChange={handleChange} checked={inputs['trait-toggle']==="toggleVisibilityAll"}/><label for="toggleVisibilityAll" class="toggleVisibilityLabel">SHOW ALL</label>
+          <input id="toggleVisibilityActiveOnly" class="toggleVisibilityInput" type="radio" name="trait-toggle" value={inputs.toggleVisibilityActiveOnly || "toggleVisibilityActiveOnly"} onChange={handleChange} checked={inputs['trait-toggle']==="toggleVisibilityActiveOnly"}/><label for="toggleVisibilityActiveOnly" class="toggleVisibilityLabel">ACTIVE ONLY</label>
+        </div>
 
         <div class="traits-container" id="general-traits-container">
             <h2 id="general-traits">GENERAL TRAITS</h2>

@@ -959,7 +959,7 @@ export default function GlobalStyle() {
         div.active-traits {
           border: 1px solid ${theme.darkcolors.primary_dark};
           padding: 10px 20px;
-          border-radius: 0 15px 0 15px;
+          border-radius: 5px;
           span#active-traits-title {
             color: ${theme.darkcolors.primary_dark};
             font-size: 0.9em;
@@ -971,11 +971,35 @@ export default function GlobalStyle() {
         }
 
         form.character-traits {
+          #toggle-visibility-container {
+            display: flex;
+            .toggleVisibilityInput {
+              display: none;
+            } 
+            .toggleVisibilityInput:checked+label {
+              border: 1px solid ${theme.darkcolors.primary};
+              box-shadow: inset 0 0 5px ${theme.darkcolors.primary}; 
+              color: ${theme.darkcolors.primary};
+            }
+            .toggleVisibilityLabel {
+              border: 1px solid ${theme.darkcolors.primary_darker};
+              color: #ffffff66;
+              margin: 25px 10px;
+              padding: 4px 15px;
+              display: block;
+              width: 100%;
+              text-align: center;
+              transition: 0.5s;
+              border-radius: 3px;
+              box-shadow: 0 0 5px #000;
+              font-family: 'Exocet';
+            }
+          }
           .trait {
             border: 1px solid ${theme.darkcolors.primary_darker};
             margin: 10px 0 25px 0;
             padding: 20px;
-            transition: 0.5s;
+            transition: 1s;
             opacity: 0.9;
             :has(input:checked) {
               opacity: 1;
@@ -1037,49 +1061,8 @@ export default function GlobalStyle() {
               filter: brightness(1);
             }
           }
-          .trait.contact {
-            margin: 40px 0 10px 0;
-            .name-container {
-              margin: 10px 0 0 0;
-              label {
-                border: 1px solid #666;
-                padding: 6px 5px 5px 10px;
-                font-size: 0.8em;
-                font-weight: bold;
-                color: #888;
-                margin: 0 0 0 0;
-                border-radius: 10px 0 0 10px;
-                box-shadow: inset 1px 1px 8px #000;
-                text-shadow: 2px 2px 4px #000;
-                width: 25%;
-                @media screen and (max-width: 700px) {
-                  font-size: 0.7em;
-                }
-              }
-              input {
-                  background-color: ${theme.darkcolors.components.input.background};
-                  height: 32px; 
-                  width: 74%;
-                  font-family: 'Alegreya';
-                  font-weight: bold;
-                  font-size: 0.9em;
-                  padding: 2px 3px 2px 10px;
-                  border: 1px solid ${theme.darkcolors.primary};
-                  border-radius: 0 10px 10px 0;
-                  color: ${theme.darkcolors.components.input.text};
-                  transition: 3s;
-                  @media screen and (max-width: 1350px) {
-                    width: 65%;
-                  }
-                  @media screen and (max-width: 900px) {
-                    width: 50%;
-                  }
-              }
-              input:focus {
-                  box-shadow: 0 0 15px ${theme.darkcolors.primary};
-                  transition: 0.5s;
-              }
-            }
+          .trait.invisible {
+            opacity: 0;
           }
         }
 
