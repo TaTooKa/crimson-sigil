@@ -147,6 +147,10 @@ export default function GlobalStyle() {
         .dark h1 {
           color: ${theme.darkcolors.text};
           text-shadow: 0 1px 0 #999, 0 2px 0 #666, 0 3px 0 #333, 3px 3px 3px #000;
+          ${'' /* low quality settings  */}
+          @media screen and (max-width: 780px) {
+            text-shadow: 1px 1px 5px #000;
+          }
         }
         .dark h2 {
           font-size: 1.2em;
@@ -241,6 +245,12 @@ export default function GlobalStyle() {
             text-decoration-style: dashed;
             text-decoration-color: ${theme.darkcolors.primary};
             text-shadow: 0 0 3px ${theme.darkcolors.primary};
+            ${'' /* low quality settings  */}
+            @media screen and (max-width: 780px) {
+              text-shadow: none;
+              text-decoration-style: none;
+              text-decoration-color: none;
+            }
           }
         }
 
@@ -544,6 +554,18 @@ export default function GlobalStyle() {
                     box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
                     text-shadow: 0 0 10px ${theme.darkcolors.primary};
                     transition: .3s ease-in !important;
+                    ${'' /* low quality settings  */}
+                    @media screen and (max-width: 780px) {
+                      text-shadow: none;
+                      transition: none;
+                      box-shadow: none;
+                    }
+                  }
+                  ${'' /* low quality settings  */}
+                  @media screen and (max-width: 780px) {
+                    text-shadow: none;
+                    transition: none;
+                    box-shadow: none;
                   }
                 }
                 a.active-link {
@@ -551,6 +573,12 @@ export default function GlobalStyle() {
                   box-shadow: inset -2px -2px 4px ${theme.darkcolors.components.blockquote.background}, inset 2px 4px 6px #ffffff88;
                   text-shadow: 1px 1px 3px black, 0 0 10px ${theme.darkcolors.primary};
                   transition: 1s;
+                  ${'' /* low quality settings  */}
+                  @media screen and (max-width: 780px) {
+                    text-shadow: none;
+                    transition: none;
+                    box-shadow: none;
+                  }
                 }
               }
             }
@@ -1502,6 +1530,17 @@ export default function GlobalStyle() {
           animation-duration: 40s;
           -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+          ${'' /* low quality settings  */}
+          @media screen and (max-width: 780px) {
+            text-shadow: none;
+            transition: none;
+            box-shadow: none;
+            background-image: none;
+            background: none;
+            -webkit-animation-name: none;
+            animation-name: none;
+            color: ${theme.darkcolors.secondary};
+          }
         }
 
         @-webkit-keyframes shine2 {
@@ -1548,6 +1587,17 @@ export default function GlobalStyle() {
           animation-duration: 40s;
           -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+          ${'' /* low quality settings  */}
+          @media screen and (max-width: 780px) {
+            text-shadow: none;
+            transition: none;
+            box-shadow: none;
+            background-image: none;
+            background: none;
+            -webkit-animation-name: none;
+            animation-name: none;
+            color: ${theme.darkcolors.primary_dark};
+          }
         }
 
         @-webkit-keyframes shine {
