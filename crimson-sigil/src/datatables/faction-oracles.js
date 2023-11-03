@@ -867,7 +867,7 @@ const factionOracleResults = {
         ],
     ],
     "oracle-gang-main-trade-result": [
-        "Deal in prohibited neural boosts, intellect stims, sakawa charms",
+        "Deal in prohibited neural boons, intellect stims, sakawa charms",
         "Operate a stash house in the old Metro system and fence goods",
         "Import, crack and distribute Vr games and hong Kong action sims",
         "hack and tap electronic infrastructure, for a price",

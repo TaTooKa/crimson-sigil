@@ -11,7 +11,7 @@ export default {
         text: `#2d3748`,
       },
     },
-    boost: {
+    boon: {
       dark: `#0f0c3d`,
       mid: `#3737a5`,
       light: `#5aafee`,
@@ -36,14 +36,14 @@ export default {
         background: `#0e0904ff`,
         text: `#ffffff`,
       },
-      boost: {
+      boon: {
         background: '#ffce2266',
         border: '#463a2488',
         border2: '#000000ff',
         border3: '#ffce2233',
         outline: '#ffce2244',
       },
-      setback: {
+      bane: {
         background: '#c0002699',
         border: '#c0002688',
         border2: '#000000ff',

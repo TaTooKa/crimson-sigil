@@ -1501,14 +1501,14 @@ export default function GlobalStyle() {
           to {background-position:0 -800%};
         }
 
-        ${'' /* SETBACK EFFECT */}
-        span.setback {
+        ${'' /* BANE EFFECT */}
+        span.bane {
           display: inline-block;
           font-size: 1.2em;
           font-family: 'Exocet';
           letter-spacing: -.1em;
           transform: scale(.95, 1) translate(0, .05em);
-          color: ${theme.darkcolors.components.setback.background};
+          color: ${theme.darkcolors.components.bane.background};
           background-image: linear-gradient(
             -40deg, 
             #ffffff66 0%, 
@@ -1517,10 +1517,10 @@ export default function GlobalStyle() {
             #ffffff00 60%, 
             #ffffff66 100%
           );
-          text-shadow: 0 0 2px ${theme.darkcolors.components.setback.border}, 
-          0 0 3px ${theme.darkcolors.components.setback.border2}, 
-          0 0 5px ${theme.darkcolors.components.setback.border3};
-          -webkit-text-stroke: 1px ${theme.darkcolors.components.setback.outline};
+          text-shadow: 0 0 2px ${theme.darkcolors.components.bane.border}, 
+          0 0 3px ${theme.darkcolors.components.bane.border2}, 
+          0 0 5px ${theme.darkcolors.components.bane.border3};
+          -webkit-text-stroke: 1px ${theme.darkcolors.components.bane.outline};
           -webkit-background-size: 50px;
           background-size: 50px;
           -webkit-background-clip: text;
@@ -1556,16 +1556,16 @@ export default function GlobalStyle() {
           }
         }
 
-        ${'' /* END SETBACK EFFECT */}
+        ${'' /* END BANE EFFECT */}
 
-        ${'' /* BOOST EFFECT */}
-        span.boost {
+        ${'' /* BOON EFFECT */}
+        span.boon {
           display: inline-block;
           font-size: 1.2em;
           font-family: 'Exocet';
           letter-spacing: -.1em;
           transform: scale(.95, 1) translate(0, .05em);
-          color: ${theme.darkcolors.components.boost.background};
+          color: ${theme.darkcolors.components.boon.background};
           background-image: linear-gradient(
             -40deg, 
             #ffffff66 0%, 
@@ -1574,10 +1574,10 @@ export default function GlobalStyle() {
             #ffffff00 60%, 
             #ffffff66 100%
           );
-          text-shadow: 0 0 2px ${theme.darkcolors.components.boost.border}, 
-          0 0 3px ${theme.darkcolors.components.boost.border2}, 
-          0 0 5px ${theme.darkcolors.components.boost.border3};
-          -webkit-text-stroke: 1px ${theme.darkcolors.components.boost.outline};
+          text-shadow: 0 0 2px ${theme.darkcolors.components.boon.border}, 
+          0 0 3px ${theme.darkcolors.components.boon.border2}, 
+          0 0 5px ${theme.darkcolors.components.boon.border3};
+          -webkit-text-stroke: 1px ${theme.darkcolors.components.boon.outline};
           -webkit-background-size: 50px;
           background-size: 50px;
           -webkit-background-clip: text;
@@ -1613,7 +1613,7 @@ export default function GlobalStyle() {
           }
         }
 
-        ${'' /* END BOOST EFFECT */}
+        ${'' /* END BOON EFFECT */}
 
         ${'' /* ORACLE PAGES  */}
         div#oracles-log {

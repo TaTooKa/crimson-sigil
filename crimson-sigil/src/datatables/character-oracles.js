@@ -2064,7 +2064,7 @@ const characterOracleResults = {
     ],
     "oracle-flashy-cyberware-cyberlegs-result": [
         "Have a pair of integral, stiletto-heeled cyberfeet, that don't seem to impair walking at all.",
-        "Pants can't quite conceal the bulging hydraulics for jump boosters.",
+        "Pants can't quite conceal the bulging hydraulics for jump booners.",
         "One leg is meat, the other is a faux, ivory-looking cyberleg with gold accents; they're wearing a skirt or have cut the leg off their pants to show it off.",
         "A modified Realskinn covering that doesn't make the leg look real, with metal and flesh looping in on themselves.",
         "Foot looks like the end of a stabilizing leg for industrial machinery.",
@@ -2525,7 +2525,7 @@ const characterOracleResults = {
         "Crippled as child, skeleton rebuilt, in constant pain, tough",
         "linear-frame-enhanced kick boxer, listens to K-Pop pre-op",
         "Cyborg veteran of Kashmir emergency, won’t leave witnesses",
-        "late stage immunodeficiency infection, needs immunoboosters, nothing to lose",
+        "late stage immunodeficiency infection, needs immunobooners, nothing to lose",
         "Post-combat cleansing ritual using sage and Bible verse",
         "Mutilated in Freak Fight bout, suspects crime syndicate boss",
         "Former VDV paratrooper, Moldova veteran on war crimes list",
