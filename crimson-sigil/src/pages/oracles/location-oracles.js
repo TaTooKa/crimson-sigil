@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
-import cityOracleResults from '/src/datatables/city-oracles'
+import locationOracleResults from '/src/datatables/location-oracles'
 import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
-export default function CityOracles() {
+export default function LocationOracles() {
   const headings = [
     {depth: 2, value: "SENSES"},
     {depth: 3, value: "SMELL"},
@@ -32,7 +32,7 @@ export default function CityOracles() {
     {depth: 3, value: "ATYPICAL WEATHER"},
   ]
 
-  const oracleLogName = "cityOraclesLog";
+  const oracleLogName = "locationOraclesLog";
 
   const windowGlobal = typeof window !== 'undefined' && window
   const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
@@ -87,26 +87,26 @@ export default function CityOracles() {
         <h2 id="senses">SENSES</h2>
         <blockquote><p>Use these oracles for first impressions or sensory details.</p></blockquote>
         <h3 id="smell">SMELL</h3>
-        <Oracle oracleName="smell" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="smell" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="sound">SOUND</h3>
-        <Oracle oracleName="sound" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="sound" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="sight">SIGHT</h3>
-        <Oracle oracleName="sight" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="sight" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
         <br/>
 
         <h2 id="buildings">BUILDINGS</h2>
         <blockquote><p>Use these oracles to generate a building with varying levels of detail.</p></blockquote>
 
         <h3 id="building-feature">BUILDING TYPE</h3>
-        <Oracle oracleName="building-type" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="building-feature">BUILDING FEATURE</h3>
-        <Oracle oracleName="building-feature" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="building-architecture">BUILDING ARCHITECTURAL STLYE</h3>
-        <Oracle oracleName="building-architecture" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-architecture" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <div id="city-exterior-container">
@@ -116,16 +116,16 @@ export default function CityOracles() {
 
         <h3 id="building-interior">BUILDING INTERIOR</h3>
         <h4 id="building-interior-style">⤷ INTERIOR STYLE</h4>
-        <Oracle oracleName="building-interior-style" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-interior-style" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="building-interior-state">⤷ INTERIOR STATE</h4>
-        <Oracle oracleName="building-interior-state" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-interior-state" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="building-interior-feature">⤷ INTERIOR FEATURE</h4>
-        <Oracle oracleName="building-interior-feature" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-interior-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="building-interior-secret">⤷ INTERIOR SECRET</h4>
-        <Oracle oracleName="building-interior-secret" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="building-interior-secret" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
         <br/>
 
         <div id="city-interior-container">
@@ -138,23 +138,23 @@ export default function CityOracles() {
         <blockquote><p>Use these oracles to generate nuanced descriptions for more specific contexts.</p></blockquote>
 
         <h3 id="upcycled-stuff">UPCYCLED STUFF</h3>
-        <Oracle oracleName="upcycled-stuff" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="upcycled-stuff" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="legacy-infrastructure">LEGACY INFRASTRUCTURE</h3>
-        <Oracle oracleName="legacy-infrastructure" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="legacy-infrastructure" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="nightlife">NIGHTLIFE</h3>
         <h4 id="bar-club-name">⤷ BAR / CLUB NAME</h4>
-        <Oracle oracleName="bar-club-name" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="bar-club-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="bar-club-status">⤷ BAR / CLUB STATUS</h4>
-        <Oracle oracleName="bar-club-status" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="bar-club-status" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="bar-club-security">⤷ BAR / CLUB SECURITY</h4>
-        <Oracle oracleName="bar-club-security" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="bar-club-security" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="bar-club-vibe">⤷ BAR / CLUB VIBE</h4>
-        <Oracle oracleName="bar-club-vibe" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="bar-club-vibe" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <div id="nightclub-image-container">
@@ -163,28 +163,28 @@ export default function CityOracles() {
         <br/>
 
         <h3 id="nightclub-encounters">NIGHTCLUB ENCOUNTER</h3>
-        <Oracle oracleName="nightclub-encounter" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="nightclub-encounter" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
         <blockquote><p>Use this oracle when on a nightclub and you want to generate a complication, plot hook, or both.</p></blockquote>
         <br/>
 
         <h3 id="screen-content">SCREEN CONTENT</h3>
-        <Oracle oracleName="screen-content" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="screen-content" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
         <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
         <br/>
 
         <h3 id="advertainment">ADVERTAINMENT</h3>
 
         <h4 id="advertainment-brand">⤷ ADVERTAINMENT - BRAND</h4>
-        <Oracle oracleName="advertainment-brand" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="advertainment-brand" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="advertainment-product-name">⤷ ADVERTAINMENT - PRODUCT NAME</h4>
-        <Oracle oracleName="advertainment-product-name" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="advertainment-product-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="advertainment-product-line">⤷ ADVERTAINMENT - PRODUCT LINE</h4>
-        <Oracle oracleName="advertainment-product-line" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="advertainment-product-line" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="advertainment-marketing-style">⤷ ADVERTAINMENT - MARKETING STYLE</h4>
-        <Oracle oracleName="advertainment-marketing-style" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="advertainment-marketing-style" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
 
@@ -194,30 +194,30 @@ export default function CityOracles() {
         <h3 id="terrestrial-vehicle">TERRESTRIAL VEHICLE</h3>
 
         <h4 id="terrestrial-vehicle-type">⤷ VEHICLE - GENERAL TYPE</h4>
-        <Oracle oracleName="terrestrial-vehicle-type" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="terrestrial-vehicle-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="terrestrial-vehicle-car">⤷ VEHICLE - BRAND, TYPE AND PAINTJOB</h4>
-        <Oracle oracleName="terrestrial-vehicle-car" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName} combined/>
+        <Oracle oracleName="terrestrial-vehicle-car" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} combined/>
 
         <h4 id="terrestrial-vehicle-activity">⤷ VEHICLE - ACTIVITY</h4>
-        <Oracle oracleName="terrestrial-vehicle-activity" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="terrestrial-vehicle-activity" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="terrestrial-vehicle-feature">⤷ VEHICLE - FEATURE</h4>
-        <Oracle oracleName="terrestrial-vehicle-feature" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="terrestrial-vehicle-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="terrestrial-vehicle-condition">⤷ VEHICLE - CONDITION</h4>
-        <Oracle oracleName="terrestrial-vehicle-condition" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="terrestrial-vehicle-condition" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="aerial-vehicle">AERIAL VEHICLE</h3>
 
         <h4 id="aerial-vehicle-type">⤷ AERIAL VEHICLE - TYPE</h4>
-        <Oracle oracleName="aerial-vehicle-type" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="aerial-vehicle-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="aerial-vehicle-activity">⤷ AERIAL VEHICLE - ACTIVITY</h4>
-        <Oracle oracleName="aerial-vehicle-activity" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="aerial-vehicle-activity" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="aquatic-vehicle">AQUATIC VEHICLE</h3>
-        <Oracle oracleName="aquatic-vehicle" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="aquatic-vehicle" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
 
@@ -227,27 +227,27 @@ export default function CityOracles() {
         <h3 id="strange-sickness">STRANGE SICKNESS</h3>
 
         <h4 id="strange-sickness-symptoms">⤷ STRANGE SICKNESS - SYMPTOMS</h4>
-        <Oracle oracleName="strange-sickness-symptoms" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="strange-sickness-symptoms" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="strange-sickness-cause">⤷ STRANGE SICKNESS - CAUSE</h4>
-        <Oracle oracleName="strange-sickness-cause" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="strange-sickness-cause" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <h3 id="local-conflict">LOCAL CONFLICT</h3>
 
         <h4 id="conflict-group">⤷ CONFLICT GROUP</h4>
-        <Oracle oracleName="conflict-group" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="conflict-group" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="conflict-source">⤷ CONFLICT SOURCE</h4>
-        <Oracle oracleName="conflict-source" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="conflict-source" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="conflict-adversary-group">⤷ ADVERSARY GROUP</h4>
-        <Oracle oracleName="conflict-adversary-group" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="conflict-adversary-group" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         
         <h3 id="atypical-weather">ATYPICAL WEATHER</h3>
-        <Oracle oracleName="atypical-weather" oracleDatatable={cityOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="atypical-weather" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <br/>

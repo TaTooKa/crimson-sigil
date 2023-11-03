@@ -24,8 +24,8 @@
   items:
     - label: 'Core Oracles'
       link: '/oracles/core-oracles'
-    - label: 'City Oracles'
-      link: '/oracles/city-oracles'
+    - label: 'Location Oracles'
+      link: '/oracles/location-oracles'
     - label: 'Character Oracles'
       link: '/oracles/character-oracles'
     - label: 'Faction Oracles'
