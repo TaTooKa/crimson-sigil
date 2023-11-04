@@ -1691,7 +1691,7 @@ export default function GlobalStyle() {
               font-weight: bold;
               border: 1px solid ${theme.darkcolors.primary_dark};
               border-radius: 3px 0 0 3px;
-              min-height: 35px;
+              min-height: 42px;
               font-size: 1em;
               color: ${theme.darkcolors.components.input.text};
               transition: 1s;

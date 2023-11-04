@@ -1,17 +1,24 @@
 import React from 'react';
 
-const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) => {
+const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, template=false}) => {
 
   const textboxId = "oracle-"+oracleName+"-result";
 
-  if ( combined ) { 
-    var textboxClass = "oracle-result combined";
-  } else {
-    var textboxClass = "oracle-result";
-  }
+  let textboxClass = "oracle-result";
+  if ( combined ) { textboxClass += " combined"; }
+  if ( template ) { textboxClass += " template"; } 
+  
   const buttonId = "oracle-"+oracleName+"-button";
 
   const windowGlobal = typeof window !== 'undefined' && window
+
+  const renderTemplate = (string, obj) => {
+    var s = string;
+    for(var prop in obj) {
+      s = s.replace(new RegExp('{'+ prop +'}','g'), obj[prop]);
+    }
+    return s;
+  }
 
   const handleOnClick = (event) => {
     var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
@@ -24,7 +31,18 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) =>
       oracleDatatable[desiredElementId].forEach((subTable) => {
         result.push(subTable[Math.floor(Math.random()*subTable.length)]);
       });
-      oracleResult = result.join(" ");
+      oracleResult = result.join("");
+    } else if ( inputResult.classList.contains("template") ) {
+
+      var template = oracleDatatable[desiredElementId].template[Math.floor(Math.random()*oracleDatatable[desiredElementId].template.length)];
+      var params = {};
+
+      for (const [key, value] of Object.entries(oracleDatatable[desiredElementId].tables)) {
+        params[key] = oracleDatatable[desiredElementId].tables[key][Math.floor(Math.random()*oracleDatatable[desiredElementId].tables[key].length)];
+      }
+      oracleResult = renderTemplate(template, params);
+
+
     } else {
       // Result is built from a single table
       oracleResult = oracleDatatable[desiredElementId][Math.floor(Math.random()*oracleDatatable[desiredElementId].length)];

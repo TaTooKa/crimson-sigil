@@ -8,28 +8,17 @@ import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
 export default function LocationOracles() {
   const headings = [
-    {depth: 2, value: "SENSES"},
-    {depth: 3, value: "SMELL"},
-    {depth: 3, value: "SOUND"},
-    {depth: 3, value: "SIGHT"},
-    {depth: 2, value: "BUILDINGS"},
-    {depth: 3, value: "BUILDING TYPE"},
-    {depth: 3, value: "BUILDING FEATURE"},
-    {depth: 3, value: "BUILDING INTERIOR"},
-    {depth: 2, value: "CITY DETAILS"},
-    {depth: 3, value: "UPCYCLED STUFF"},
-    {depth: 3, value: "LEGACY INFRASTRUCTURE"},
-    {depth: 3, value: "NIGHTLIFE"},
-    {depth: 3, value: "SCREEN CONTENT"},
-    {depth: 3, value: "ADVERTAINMENT"},
-    {depth: 2, value: "VEHICLES"},
-    {depth: 3, value: "TERRESTRIAL VEHICLE"},
-    {depth: 3, value: "AERIAL VEHICLE"},
-    {depth: 3, value: "AQUATIC VEHICLE"},
-    {depth: 2, value: "OMINOUS OCCURRENCES"},
-    {depth: 3, value: "STRANGE SICKNESS"},
-    {depth: 3, value: "LOCAL CONFLICT"},
-    {depth: 3, value: "ATYPICAL WEATHER"},
+    {depth: 2, value: "WILDERNESS"},
+    {depth: 3, value: "BIOME"},
+    {depth: 3, value: "LOCATION"},
+    {depth: 2, value: "CIVILIZATION"},
+    {depth: 3, value: "SETTLEMENT"},
+    {depth: 3, value: "CITY"},
+    {depth: 2, value: "INCURSIONS"},
+    {depth: 3, value: "INCURSION THEME"},
+    {depth: 3, value: "INCURSION DOMAIN"},
+    {depth: 3, value: "INCURSION DETAILS"},
+    {depth: 3, value: "INCURSION DANGER"},
   ]
 
   const oracleLogName = "locationOraclesLog";
@@ -44,211 +33,212 @@ export default function LocationOracles() {
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
 
-  function openAIGeneratedExterior(e) {
-    e.preventDefault();
-    const type = document.getElementById('oracle-building-type-result').innerText;
-    const feature = document.getElementById('oracle-building-feature-result').innerText;
-    const architecture = document.getElementById('oracle-building-architecture-result').innerText;
-
-    const url = "https://perchance.org/cyberpunk-city-exterior?type="+type+"&feature="+feature+"&architecture="+architecture;
-    window.open(url, '_blank');
-  }
-  
-  function openAIGeneratedInterior(e) {
-    e.preventDefault();
-    const type = document.getElementById('oracle-building-type-result').innerText;
-    const style = document.getElementById('oracle-building-interior-style-result').innerText;
-    const state = document.getElementById('oracle-building-interior-state-result').innerText;
-    const feature = document.getElementById('oracle-building-interior-feature-result').innerText;
-
-    const url = "https://perchance.org/cyberpunk-city-interior?type="+type+"&style="+style+"&state="+state+"&feature="+feature;
-    window.open(url, '_blank');
-  }
-
-  function openAIGeneratedNightclub(e) {
-    e.preventDefault();
-    const type = document.getElementById('oracle-bar-club-vibe-result').innerText + " nightclub";
-    const style = "modern";
-    const state = "security: "+ encodeURIComponent(document.getElementById('oracle-bar-club-security-result').innerText);
-    const feature = "patrons and bystanders. "+encodeURIComponent(document.getElementById('oracle-bar-club-status-result').innerText);
-
-    const url = "https://perchance.org/cyberpunk-city-interior?type="+type+"&style="+style+"&state="+state+"&feature="+feature;
-    window.open(url, '_blank');
-  }
-
   return (
-    <Layout title="CITY ORACLES" headings={headings}>
-      <Seo title="City Oracles" />
+    <Layout title="LOCATION ORACLES" headings={headings}>
+      <Seo title="Location Oracles" />
 
       <div id="oracles-log"></div>
 
       <div class="oracles-container">
 
-        <h2 id="senses">SENSES</h2>
-        <blockquote><p>Use these oracles for first impressions or sensory details.</p></blockquote>
-        <h3 id="smell">SMELL</h3>
-        <Oracle oracleName="smell" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="sound">SOUND</h3>
-        <Oracle oracleName="sound" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="sight">SIGHT</h3>
-        <Oracle oracleName="sight" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-        <br/>
-
-        <h2 id="buildings">BUILDINGS</h2>
-        <blockquote><p>Use these oracles to generate a building with varying levels of detail.</p></blockquote>
-
-        <h3 id="building-feature">BUILDING TYPE</h3>
-        <Oracle oracleName="building-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="building-feature">BUILDING FEATURE</h3>
-        <Oracle oracleName="building-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="building-architecture">BUILDING ARCHITECTURAL STLYE</h3>
-        <Oracle oracleName="building-architecture" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h2 id="wilderness">WILDERNESS</h2>
+        <h3 id="biome">BIOME</h3>
+        <Oracle oracleName="biome" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
-        <div id="city-exterior-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedExterior}>⤷ Get AI generated exterior image for these results</a></span>
-        </div>
-        <br/>
+        <h3 id="location">LOCATION</h3>
+        <blockquote><p>Use these oracles to generate a location inside a particular biome.</p></blockquote>
 
-        <h3 id="building-interior">BUILDING INTERIOR</h3>
-        <h4 id="building-interior-style">⤷ INTERIOR STYLE</h4>
-        <Oracle oracleName="building-interior-style" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="locations-desert">DESERT / WASTELAND / TUNDRA</h4>
+        <Oracle oracleName="locations-desert" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h4 id="building-interior-state">⤷ INTERIOR STATE</h4>
-        <Oracle oracleName="building-interior-state" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="locations-alpine">MOUNTAIN / ALPINE HILLS</h4>
+        <Oracle oracleName="locations-alpine" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h4 id="building-interior-feature">⤷ INTERIOR FEATURE</h4>
-        <Oracle oracleName="building-interior-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="locations-plains">PLAINS AND HILLS</h4>
+        <Oracle oracleName="locations-plains" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h4 id="building-interior-secret">⤷ INTERIOR SECRET</h4>
-        <Oracle oracleName="building-interior-secret" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-        <br/>
+        <h4 id="locations-woodlands">FOREST / SHRUBLANDS / JUNGLE / SWAMP</h4>
+        <Oracle oracleName="locations-woodlands" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <div id="city-interior-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedInterior}>⤷ Get AI generated interior image for these results</a></span>
-        </div>
-        <br/>
-        <br/>
+        <h4 id="locations-frigid">FRIGID / TAIGA / GLACIER</h4>
+        <Oracle oracleName="locations-frigid" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h2 id="city-details">CITY DETAILS</h2>
-        <blockquote><p>Use these oracles to generate nuanced descriptions for more specific contexts.</p></blockquote>
-
-        <h3 id="upcycled-stuff">UPCYCLED STUFF</h3>
-        <Oracle oracleName="upcycled-stuff" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="legacy-infrastructure">LEGACY INFRASTRUCTURE</h3>
-        <Oracle oracleName="legacy-infrastructure" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="nightlife">NIGHTLIFE</h3>
-        <h4 id="bar-club-name">⤷ BAR / CLUB NAME</h4>
-        <Oracle oracleName="bar-club-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="bar-club-status">⤷ BAR / CLUB STATUS</h4>
-        <Oracle oracleName="bar-club-status" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="bar-club-security">⤷ BAR / CLUB SECURITY</h4>
-        <Oracle oracleName="bar-club-security" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="bar-club-vibe">⤷ BAR / CLUB VIBE</h4>
-        <Oracle oracleName="bar-club-vibe" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="locations-coast">COAST / WATER MASS</h4>
+        <Oracle oracleName="locations-coast" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
-        <div id="nightclub-image-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedNightclub}>⤷ Get AI generated nightclub image for these results</a></span>
-        </div>
-        <br/>
+        <h3 id="location-descriptor">LOCATION DESCRIPTOR</h3>
+        <Oracle oracleName="location-descriptor" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h3 id="nightclub-encounters">NIGHTCLUB ENCOUNTER</h3>
-        <Oracle oracleName="nightclub-encounter" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-        <blockquote><p>Use this oracle when on a nightclub and you want to generate a complication, plot hook, or both.</p></blockquote>
-        <br/>
+        <h3 id="location-feature">LOCATION FEATURE</h3>
+        <blockquote><p>Use these oracles to generate a feature, object or situation found in this location.</p></blockquote>
 
-        <h3 id="screen-content">SCREEN CONTENT</h3>
-        <Oracle oracleName="screen-content" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-        <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
-        <br/>
+        <h4 id="location-feature-aspect">FEATURE ASPECT</h4>
+        <Oracle oracleName="location-feature-aspect" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
-        <h3 id="advertainment">ADVERTAINMENT</h3>
-
-        <h4 id="advertainment-brand">⤷ ADVERTAINMENT - BRAND</h4>
-        <Oracle oracleName="advertainment-brand" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="advertainment-product-name">⤷ ADVERTAINMENT - PRODUCT NAME</h4>
-        <Oracle oracleName="advertainment-product-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="advertainment-product-line">⤷ ADVERTAINMENT - PRODUCT LINE</h4>
-        <Oracle oracleName="advertainment-product-line" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="advertainment-marketing-style">⤷ ADVERTAINMENT - MARKETING STYLE</h4>
-        <Oracle oracleName="advertainment-marketing-style" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="location-feature-focus">FEATURE FOCUS</h4>
+        <Oracle oracleName="location-feature-focus" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
+        <br/>
+        <hr/>
+        <br/>
+        <h2 id="civilization">CIVILIZATION</h2>
 
-        <h2 id="vehicles">VEHICLES</h2>
-        <blockquote><p>Use these oracles to generate vehicles with varying levels of detail.</p></blockquote>
+        <h3 id="settlement">SETTLEMENT</h3>
+        <blockquote><p>Use these oracles to generate small settlements like villages or hamlets.</p></blockquote>
 
-        <h3 id="terrestrial-vehicle">TERRESTRIAL VEHICLE</h3>
+        <h4 id="settlement-name">SETTLEMENT NAME</h4>
+        <Oracle oracleName="settlement-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} combined/>
 
-        <h4 id="terrestrial-vehicle-type">⤷ VEHICLE - GENERAL TYPE</h4>
-        <Oracle oracleName="terrestrial-vehicle-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="terrestrial-vehicle-car">⤷ VEHICLE - BRAND, TYPE AND PAINTJOB</h4>
-        <Oracle oracleName="terrestrial-vehicle-car" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} combined/>
-
-        <h4 id="terrestrial-vehicle-activity">⤷ VEHICLE - ACTIVITY</h4>
-        <Oracle oracleName="terrestrial-vehicle-activity" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="terrestrial-vehicle-feature">⤷ VEHICLE - FEATURE</h4>
-        <Oracle oracleName="terrestrial-vehicle-feature" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="terrestrial-vehicle-condition">⤷ VEHICLE - CONDITION</h4>
-        <Oracle oracleName="terrestrial-vehicle-condition" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="aerial-vehicle">AERIAL VEHICLE</h3>
-
-        <h4 id="aerial-vehicle-type">⤷ AERIAL VEHICLE - TYPE</h4>
-        <Oracle oracleName="aerial-vehicle-type" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="aerial-vehicle-activity">⤷ AERIAL VEHICLE - ACTIVITY</h4>
-        <Oracle oracleName="aerial-vehicle-activity" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="aquatic-vehicle">AQUATIC VEHICLE</h3>
-        <Oracle oracleName="aquatic-vehicle" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="settlement-trouble">SETTLEMENT TROUBLE</h4>
+        <Oracle oracleName="settlement-trouble" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
+        <h3 id="city">CITY</h3>
+        <blockquote><p>Use these oracles to generate big hubs of civilization.</p></blockquote>
 
-        <h2 id="ominous-occurrences">OMINOUS OCCURRENCES</h2>
-        <blockquote><p>Use these oracles to generate things that are background color now, but might mean trouble later.</p></blockquote>
+        <h4 id="city-name">CITY NAME</h4>
+        <Oracle oracleName="city-name" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} combined/>
 
-        <h3 id="strange-sickness">STRANGE SICKNESS</h3>
-
-        <h4 id="strange-sickness-symptoms">⤷ STRANGE SICKNESS - SYMPTOMS</h4>
-        <Oracle oracleName="strange-sickness-symptoms" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="strange-sickness-cause">⤷ STRANGE SICKNESS - CAUSE</h4>
-        <Oracle oracleName="strange-sickness-cause" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <br/>
-        <h3 id="local-conflict">LOCAL CONFLICT</h3>
-
-        <h4 id="conflict-group">⤷ CONFLICT GROUP</h4>
-        <Oracle oracleName="conflict-group" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="conflict-source">⤷ CONFLICT SOURCE</h4>
-        <Oracle oracleName="conflict-source" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <h4 id="conflict-adversary-group">⤷ ADVERSARY GROUP</h4>
-        <Oracle oracleName="conflict-adversary-group" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
-
-        <br/>
+        <h4 id="city-background">CITY LOCATION BACKGROUND</h4>
+        <Oracle oracleName="city-background" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
         
-        <h3 id="atypical-weather">ATYPICAL WEATHER</h3>
-        <Oracle oracleName="atypical-weather" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <h4 id="city-history">CITY HISTORY</h4>
+        <Oracle oracleName="city-history" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
+        <h4 id="city-description">CITY DESCRIPTION</h4>
+        <Oracle oracleName="city-description" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="city-industry">CITY PRIMARY INDUSTRY OR TRADE</h4>
+        <Oracle oracleName="city-industry" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="city-location">LOCATION IN THE CITY</h4>
+        <Oracle oracleName="city-location" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="city-tavern">TAVERN IN THE CITY</h4>
+        <Oracle oracleName="city-tavern" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <br/>
+        <hr/>
+        <br/>
+        <h2 id="incursions">INCURSIONS</h2>
+        <blockquote><p>Use these oracles when envisioning a perilous site to explore or traverse. You might want to <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> to wander through it.</p></blockquote>
+
+        <h3 id="incursion-theme">INCURSION THEME</h3>
+        <Oracle oracleName="incursion-theme" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="incursion-domain">INCURSION DOMAIN</h3>
+        <Oracle oracleName="incursion-domain" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="incursion-details">INCURSION DETAILS</h3>
+        <blockquote><p>Use these oracles to reveal the incursion site name, depending on the Domain.<br/>When you explore or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to advance and get a <span class="primary">SUCCESS</span>, reveal a new Feature.</p></blockquote>
+
+        <h4>BARROW</h4>
+        <h5 id="incursion-name-barrow">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-barrow" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-barrow">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-barrow" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h4>CAVERN</h4>
+        <h5 id="incursion-name-cavern">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-cavern" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-cavern">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-cavern" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h4>ICEREACH</h4>
+        <h5 id="incursion-name-icereach">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-icereach" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-icereach">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-icereach" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h4>MINE</h4>
+        <h5 id="incursion-name-mine">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-mine" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-mine">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-mine" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        
+        <br/>
+        <h4>PASS OR EYRIE</h4>
+        <h5 id="incursion-name-pass">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-pass" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-pass">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-pass" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>RUIN, SETTLEMENT, TUNDRA OR DESERT</h4>
+        <h5 id="incursion-name-ruin">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-ruin" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-ruin">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-ruin" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>SEA CAVE</h4>
+        <h5 id="incursion-name-seacave">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-seacave" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-seacave">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-seacave" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>JUNGLE OR SHADOWFEN</h4>
+        <h5 id="incursion-name-jungle">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-jungle" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-jungle">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-jungle" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>STRONGHOLD OR ZIGGURAT</h4>
+        <h5 id="incursion-name-stronghold">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-stronghold" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-stronghold">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-stronghold" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>TANGLEWOOD</h4>
+        <h5 id="incursion-name-tanglewood">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-tanglewood" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-tanglewood">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-tanglewood" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h4>UNDERKEEP</h4>
+        <h5 id="incursion-name-underkeep">SITE NAME</h5>
+        <Oracle oracleName="incursion-name-underkeep" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h5 id="incursion-feature-underkeep">FEATURE</h5>
+        <Oracle oracleName="incursion-feature-underkeep" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} />
+
+        <br/>
+        <h3 id="incursion-danger">INCURSION DANGER</h3>
+        <Oracle oracleName="incursion-danger" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>Use this oracle when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to advance in the incursion, get a <span class="secondary">FAILURE</span> and reveal something perilous.</p></blockquote>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
