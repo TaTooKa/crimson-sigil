@@ -9,16 +9,10 @@ import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 export default function MiscOracles() {
   const headings = [
     {depth: 2, value: "COMBAT ACTION"},
-    {depth: 2, value: "NEWS FEED"},
-    {depth: 2, value: "AR DISPLAY"},
-    {depth: 3, value: "TYPE"},
-    {depth: 3, value: "AESTHETIC"},
-    {depth: 3, value: "STYLE"},
-    {depth: 2, value: "BUG IN THE SYSTEM"},
-    {depth: 2, value: "MUSIC GENRE / SUBCULTURE STYLE"},
-    {depth: 2, value: "SOCIAL MEDIA POST CONTENT"},
-    {depth: 2, value: "HOT NEW WEEKLY FAD"},
-    {depth: 2, value: "VID SHOW"},
+    {depth: 2, value: "TRAPS"},
+    {depth: 2, value: "FACTIONS"},
+    {depth: 2, value: "ARCANE BACKLASH"},
+
 
   ]
 
@@ -47,45 +41,82 @@ export default function MiscOracles() {
         <br/>
         <blockquote><p>Use this oracle when you need ideas to visualize beats of combat or to generate descriptive situations in an ongoing battle other than "attack" or "defend".</p></blockquote>
         <br/>
+        <hr/>
 
-        <h2 id="news-feed">NEWS FEED</h2>
-        <Oracle oracleName="news-feed" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+        <h2 id="traps">TRAPS</h2>
+        <blockquote><p>Use this oracle when you find a trap and want details on what it does.</p></blockquote>
+
+        <h3 id="trap-event">TRAP EVENT</h3>
+        <Oracle oracleName="trap-event" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="trap-component">TRAP COMPONENT</h3>
+        <Oracle oracleName="trap-component" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <hr/>
+        <h2 id="factions">FACTIONS</h2>
+        <blockquote><p>Use these oracles to generate a Faction.</p></blockquote>
+
+        <h3 id="faction-name">FACTION NAME</h3>
+        <Oracle oracleName="faction-name" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName} template/>
+
+        <h3 id="faction-type">FACTION TYPE</h3>
+        <Oracle oracleName="faction-type" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="faction-influence">FACTION INFLUENCE</h3>
+        <Oracle oracleName="faction-influence" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="faction-dominion">DOMINION</h3>
+        <h4 id="faction-dominion-type">DOMINION TYPE</h4>
+        <Oracle oracleName="faction-dominion-type" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="faction-dominion-leadership">DOMINION LEADERSHIP</h4>
+        <Oracle oracleName="faction-dominion-leadership" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="faction-guild">GUILD</h3>
+        <h4 id="faction-guild-type">GUILD TYPE</h4>
+        <Oracle oracleName="faction-guild-type" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="faction-fringe-group">FRINGE GROUP</h3>
+        <h4 id="faction-fringe-type">FRINGE GROUP TYPE</h4>
+        <Oracle oracleName="faction-fringe-type" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="faction-project">FACTION PROJECT</h3>
+        <Oracle oracleName="faction-project" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="faction-quirks">FACTION QUIRKS</h3>
+        <Oracle oracleName="faction-quirks" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="faction-rumors">FACTION RUMORS</h3>
+        <Oracle oracleName="faction-rumors" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <br/>
 
-        <h2 id="ar-display">AR DISPLAY</h2>
-
-        <h3 id="type">AR DISPLAY - TYPE</h3>
-        <Oracle oracleName="ar-display-type" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="aesthetic">AR DISPLAY - AESTHETIC</h3>
-        <Oracle oracleName="ar-display-aesthetic" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
-
-        <h3 id="style">AR DISPLAY - STYLE</h3>
-        <Oracle oracleName="ar-display-style" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+        <br/>
+        <hr/>
+        <h2 id="arcane-backlash">ARCANE BACKLASH</h2>
+        <Oracle oracleName="arcane-backlash" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+        <br/>
+        <blockquote><p>Use this oracle when you use magic and it goes horribly wrong.</p></blockquote>
         <br/>
 
-        <h2 id="bug-in-the-system">BUG IN THE SYSTEM</h2>
-        <Oracle oracleName="bug-in-the-system" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
-        <blockquote><p>Use this oracle to generate errors or mishaps in a malfunctioning system or device, or when a netrunner makes a mistake in a hacking attempt.</p></blockquote>
         <br/>
-
-        <h2 id="music-genre--subculture-style">MUSIC GENRE / SUBCULTURE STYLE</h2>
-        <Oracle oracleName="music-subculture" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <br/>
-
-        <h2 id="social-media-post-content">SOCIAL MEDIA POST CONTENT</h2>
-        <Oracle oracleName="social-media" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <br/>
-
-        <h2 id="hot-new-weekly-fad">HOT NEW WEEKLY FAD</h2>
-        <Oracle oracleName="hot-new-fad" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <br/>
-
-        <h2 id="vid-show">VID SHOW</h2>
-        <Oracle oracleName="vid-show" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <br/>
-
-
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
