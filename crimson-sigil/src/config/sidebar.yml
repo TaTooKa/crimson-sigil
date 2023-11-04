@@ -30,6 +30,8 @@
       link: '/oracles/character-oracles'
     - label: 'Monster Oracles'
       link: '/oracles/monster-oracles'
+    - label: 'Treasure Oracles'
+      link: '/oracles/treasure-oracles'
     - label: 'Misc Oracles'
       link: '/oracles/misc-oracles'
 - label: Rules Reference
