@@ -28,10 +28,8 @@
       link: '/oracles/location-oracles'
     - label: 'Character Oracles'
       link: '/oracles/character-oracles'
-    - label: 'Faction Oracles'
-      link: '/oracles/faction-oracles'
-    - label: 'Mission Oracles'
-      link: '/oracles/mission-oracles'
+    - label: 'Monster Oracles'
+      link: '/oracles/monster-oracles'
     - label: 'Misc Oracles'
       link: '/oracles/misc-oracles'
 - label: Rules Reference
