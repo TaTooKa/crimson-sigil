@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme, Global, css } from '@emotion/react';
 
+
 export default function GlobalStyle() {
   const theme = useTheme();
 
@@ -1027,11 +1028,12 @@ export default function GlobalStyle() {
           .trait {
             margin: 10px 0 25px 0;
             padding: 20px;
-            transition: 0.5s;
+            transition: 1s;
+            opacity: 0.9;
             border-radius: 5px;
             border: 1px solid ${theme.darkcolors.components.blockquote.background};
             background: #00000066;
-            box-shadow: 0 5px 10px #000;
+            filter: saturate(0.2);
             input[type="checkbox"] {
               cursor: pointer;
               appearance: none;
@@ -1084,21 +1086,15 @@ export default function GlobalStyle() {
             }
 
             input:checked+label +img.art, img.art:hover {
+              ${'' /* border: 1px solid ${theme.darkcolors.primary}; */}
               filter: brightness(1);
-            }
-            img.art {
-              border: 0;
-            }
-            img.art:hover {
-              transform: scale(1.2);
-              border: 0;
-              border-radius: 25px;
-              box-shadow: 0px 0px 10px #000;
             }
           }
           .trait.active {
+              ${'' /* box-shadow: inset 0 0 10px #000, inset 0 0 150px ${theme.darkcolors.components.blockquote.background}; */}
               border: 1px solid ${theme.darkcolors.primary_dark};
-              box-shadow: 0 0 15px ${theme.darkcolors.components.blockquote.background};
+              opacity: 1;
+            filter: saturate(0.2);
           }
           .trait.invisible {
             opacity: 0;
@@ -1814,7 +1810,6 @@ export default function GlobalStyle() {
 
         ${'' /* END HOW TO PLAY PAGE  */}
         
-      `}
-    />
+      `} />
   );
 }
