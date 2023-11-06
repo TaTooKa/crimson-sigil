@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
@@ -20,6 +20,8 @@ export default function CharacterOracles() {
   const windowGlobal = typeof window !== 'undefined' && window
   const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
 
+  const [generatorKeywords, setGeneratorKeywords] = useState({});
+
   useEffect(() => {
     // on load...
     const oraclesLog = document.getElementById('oracles-log');
@@ -27,6 +29,37 @@ export default function CharacterOracles() {
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
 
+  function stripHtml(html) {
+    let tmp = document.createElement("DIV");
+    tmp.innerHTML = html.replace('<br/>', ': ');
+    return tmp.textContent || tmp.innerText || "";
+  }
+
+  const saveGeneratorKeyword = (name, value) => {
+    var genKeywords = {};
+    if ( name.startsWith('locations') ) {
+      name = 'location';
+    }
+    genKeywords[name] = stripHtml(value);
+    setGeneratorKeywords({ ...generatorKeywords, ...genKeywords });
+  };
+
+  function openAIGeneratedCharacterPortrait(e) {
+    e.preventDefault();
+    var url = new URL("https://perchance.org/grimdark-fantasy-character");
+    var searchParams = {};
+    const keywords = ["character-descriptor", "character-traits", "character-role", "character-ethnicity"];
+
+    keywords.forEach((keyword) => {
+      var key = keyword;
+      if ( generatorKeywords[key] ) {
+        searchParams[key] = generatorKeywords[key];
+      }
+    });
+    url.search = new URLSearchParams(searchParams);
+
+    window.open(url, '_blank');
+  }
 
   return (
     <Layout title="CHARACTER ORACLES" headings={headings}>
@@ -40,19 +73,22 @@ export default function CharacterOracles() {
         <h2 id="character-basics">CHARACTER BASICS</h2>
 
         <h3 id="character-role">CHARACTER ROLE</h3>
-        <Oracle oracleName="character-role" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="character-role" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h3 id="character-descriptor">CHARACTER DESCRIPTOR</h3>
-        <Oracle oracleName="character-descriptor" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="character-descriptor" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h3 id="character-goal">CHARACTER GOAL</h3>
         <Oracle oracleName="character-goal" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="character-traits">CHARACTER TRAITS</h3>
-        <Oracle oracleName="character-traits" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="character-traits" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h3 id="character-mannerisms">CHARACTER MANNERISMS</h3>
         <Oracle oracleName="character-mannerisms" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <br/>
+        <button class="ai-generator-button" onClick={openAIGeneratedCharacterPortrait}>Generate an AI image for <br/>A portrait of a <i>{generatorKeywords['character-descriptor'] || "[undefined descriptor]"}</i>, <i>{generatorKeywords['character-traits'] || "[undefined trait]"}</i> <i>{generatorKeywords['character-role'] || "[undefined role]"}</i> of <i>{generatorKeywords['character-ethnicity'] || "[undefined ethnicity]"}</i> ethnicity.</button>
+        <br/>
         <br/>
         <br/>
         <hr/>
@@ -60,7 +96,7 @@ export default function CharacterOracles() {
         <h2 id="character-background">CHARACTER BACKGROUND</h2>
         
         <h3 id="character-ethnicity">CHARACTER ETHNICITY</h3>
-        <Oracle oracleName="character-ethnicity" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="character-ethnicity" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h3 id="character-caste">CHARACTER CASTE</h3>
         <Oracle oracleName="character-caste" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
