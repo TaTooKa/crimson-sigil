@@ -1756,6 +1756,7 @@ export default function GlobalStyle() {
             font-family: 'Alegreya';
             font-size: 1.1em;
             transition: .5s;
+            box-shadow: inset 0 0 5px ${theme.darkcolors.primary_dark};
             i {
               color: ${theme.darkcolors.primary};
               text-shadow: 2px 2px 3px #000;
