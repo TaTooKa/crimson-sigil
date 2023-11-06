@@ -172,7 +172,12 @@ function CharacterStats() {
           <div class="character-arc-container">
 
               <div class="character-arc-header">
-                <span class="character-arc-title">CHARACTER ARC</span>
+                <div class="character-arc-title-container">
+                  <span class="character-arc-title">CHARACTER ARC</span>
+                </div>
+                <div class="character-arc-explanation-container">
+                  <p class="character-arc-explanation">Each of these is an <b>EPIC Challenge</b> (they increase by +2% when you <a href="/prompts/challenge-prompts#make-progress">MAKE PROGRESS</a> on them)</p>
+                </div>
               </div>
 
               <div class="quest-container arc-container">

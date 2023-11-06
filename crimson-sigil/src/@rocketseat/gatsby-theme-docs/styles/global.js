@@ -793,12 +793,34 @@ export default function GlobalStyle() {
                 box-shadow: inset 0 0 5px ${theme.darkcolors.primary_dark};
                 border-radius: 10px;
                 .character-arc-header {
-                    display: flex;
-                    .character-arc-title {
+                    display: block;
+                    .character-arc-title-container {
+                      display: block;
+                      width: 100%;
+                      .character-arc-title {
+                        flex-shrink: 0;
                         display: block;
                         width: 100%;
                         font-size: 1.3em;
                         float: left;
+                      }
+                    }
+                    .character-arc-explanation-container {
+                      display: block;
+                      width: 100%;
+                      .character-arc-explanation {
+                        padding-top: 5px;
+                        opacity: .5;
+                        transition: .5s;
+                        display: block;
+                        width: 100%;
+                        font-size: 0.7em;
+                        line-height: 1.2em;
+                        clear: both;
+                        :hover {
+                          opacity: 1;
+                        }
+                      }
                     }
                 }
                 .arc-container {
