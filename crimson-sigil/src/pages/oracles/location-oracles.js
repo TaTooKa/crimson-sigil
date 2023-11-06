@@ -6,6 +6,8 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 import locationOracleResults from '/src/datatables/location-oracles'
 import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+
 export default function LocationOracles() {
   const headings = [
     {depth: 2, value: "WILDERNESS"},
@@ -141,7 +143,7 @@ export default function LocationOracles() {
         <Oracle oracleName="location-descriptor" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
-        <button class="ai-generator-button" onClick={openAIGeneratedLocation}>Generate an AI image for <br/><i>{generatorKeywords['location-descriptor'] || "[undefined descriptor]"}</i> <i>{generatorKeywords['location'] || "[undefined location]"}</i> in a <i>{generatorKeywords['biome'] || "[undefined biome]"}</i> landscape</button>
+        <button class="ai-generator-button" onClick={openAIGeneratedLocation}><OpenInNewIcon/>Generate an AI image for <br/><i>{generatorKeywords['location-descriptor'] || "[undefined descriptor]"}</i> <i>{generatorKeywords['location'] || "[undefined location]"}</i> in a <i>{generatorKeywords['biome'] || "[undefined biome]"}</i> landscape</button>
         <br/>
         <br/>
 
@@ -192,7 +194,7 @@ export default function LocationOracles() {
         <Oracle oracleName="city-location" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
-        <button class="ai-generator-button" onClick={openAIGeneratedCityLocation}>Generate an AI image for <br/><i>{generatorKeywords['city-location'] || "[undefined location]"}</i>  in a city; <i>{generatorKeywords['city-description'] || "[undefined description]"}</i></button>
+        <button class="ai-generator-button" onClick={openAIGeneratedCityLocation}><OpenInNewIcon/>Generate an AI image for <br/><i>{generatorKeywords['city-location'] || "[undefined location]"}</i>  in a city; <i>{generatorKeywords['city-description'] || "[undefined description]"}</i></button>
         <br/>
         <br/>
 
@@ -213,7 +215,7 @@ export default function LocationOracles() {
         <Oracle oracleName="incursion-domain" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
-        <button class="ai-generator-button" onClick={openAIGeneratedIncursion}>Generate an AI image for <br/><i>{generatorKeywords['incursion-domain'] || "[undefined domain]"}</i> It is <i>{generatorKeywords['incursion-theme'] || "[undefined theme]"}</i></button>
+        <button class="ai-generator-button" onClick={openAIGeneratedIncursion}><OpenInNewIcon/>Generate an AI image for <br/><i>{generatorKeywords['incursion-domain'] || "[undefined domain]"}</i> It is <i>{generatorKeywords['incursion-theme'] || "[undefined theme]"}</i></button>
         <br/>
         <br/>
         <h3 id="incursion-details">INCURSION DETAILS</h3>

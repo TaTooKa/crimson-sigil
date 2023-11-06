@@ -6,6 +6,8 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 import characterOracleResults from '/src/datatables/character-oracles'
 import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+
 export default function CharacterOracles() {
   const headings = [
     {depth: 2, value: "CHARACTER BASICS"},
@@ -87,7 +89,7 @@ export default function CharacterOracles() {
         <h3 id="character-mannerisms">CHARACTER MANNERISMS</h3>
         <Oracle oracleName="character-mannerisms" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
         <br/>
-        <button class="ai-generator-button" onClick={openAIGeneratedCharacterPortrait}>Generate an AI image for <br/>A portrait of a <i>{generatorKeywords['character-descriptor'] || "[undefined descriptor]"}</i>, <i>{generatorKeywords['character-traits'] || "[undefined trait]"}</i> <i>{generatorKeywords['character-role'] || "[undefined role]"}</i> of <i>{generatorKeywords['character-ethnicity'] || "[undefined ethnicity]"}</i> ethnicity.</button>
+        <button class="ai-generator-button" onClick={openAIGeneratedCharacterPortrait}><OpenInNewIcon/>Generate an AI image for <br/>A portrait of a <i>{generatorKeywords['character-descriptor'] || "[undefined descriptor]"}</i>, <i>{generatorKeywords['character-traits'] || "[undefined trait]"}</i> <i>{generatorKeywords['character-role'] || "[undefined role]"}</i> of <i>{generatorKeywords['character-ethnicity'] || "[undefined ethnicity]"}</i> ethnicity.</button>
         <br/>
         <br/>
         <br/>

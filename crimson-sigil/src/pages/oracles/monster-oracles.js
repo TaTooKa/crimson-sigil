@@ -6,6 +6,9 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 import monsterOracleResults from '/src/datatables/monster-oracles'
 import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+
+
 export default function MonsterOracles() {
   const headings = [
     {depth: 2, value: "MONSTROSITY"},
@@ -91,7 +94,7 @@ export default function MonsterOracles() {
         <Oracle oracleName="monstrosity-abilities" oracleDatatable={monsterOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
-        <button class="ai-generator-button" onClick={openAIGeneratedMonsterPortrait}>Generate an AI image for <br/>A <i>{generatorKeywords['monstrosity-size'] || "[undefined size]"}</i> <i>{generatorKeywords['monstrosity-form'] || "[undefined form]"}</i> monster. Its type is <i>{generatorKeywords['monstrosity-type'] || "[undefined type]"}</i> characteristics: <i>{generatorKeywords['monstrosity-characteristics'] || "[undefined characteristics]"}</i>. abilities: <i>{generatorKeywords['monstrosity-abilities'] || "[undefined abilities]"}</i>.</button>
+        <button class="ai-generator-button" onClick={openAIGeneratedMonsterPortrait}><OpenInNewIcon/>Generate an AI image for <br/>A <i>{generatorKeywords['monstrosity-size'] || "[undefined size]"}</i> <i>{generatorKeywords['monstrosity-form'] || "[undefined form]"}</i> monster. Its type is <i>{generatorKeywords['monstrosity-type'] || "[undefined type]"}</i> characteristics: <i>{generatorKeywords['monstrosity-characteristics'] || "[undefined characteristics]"}</i>. abilities: <i>{generatorKeywords['monstrosity-abilities'] || "[undefined abilities]"}</i>.</button>
         <br/>
         <br/>
 

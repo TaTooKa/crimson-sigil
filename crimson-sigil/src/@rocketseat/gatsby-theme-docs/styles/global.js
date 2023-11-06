@@ -1764,6 +1764,11 @@ export default function GlobalStyle() {
             :hover {
               box-shadow: 0 0 5px ${theme.darkcolors.primary_dark};
             }
+            svg.MuiSvgIcon-root {
+              font-size: 1.4rem;
+              transform: translateY(0.2em);
+              width: 1.5em;
+            }
           }
 
         } 
