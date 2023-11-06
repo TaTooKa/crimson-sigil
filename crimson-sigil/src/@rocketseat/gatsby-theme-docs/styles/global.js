@@ -1744,6 +1744,26 @@ export default function GlobalStyle() {
 
             }
           }
+          button.ai-generator-button {
+            width: 100%;
+            min-height: 42px;
+            background: ${theme.darkcolors.components.pre.background};
+            color: ${theme.darkcolors.text};
+            border: 1px solid ${theme.darkcolors.primary_dark};
+            padding: 7px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-family: 'Alegreya';
+            font-size: 1.1em;
+            transition: .5s;
+            i {
+              color: ${theme.darkcolors.primary};
+              text-shadow: 2px 2px 3px #000;
+            }
+            :hover {
+              box-shadow: 0 0 5px ${theme.darkcolors.primary_dark};
+            }
+          }
 
         } 
 

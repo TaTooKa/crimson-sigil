@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, template=false}) => {
+const Oracle = ({oracleName, oracleDatatable, oracleLogName, saveGeneratorKeyword, combined=false, template=false}) => {
 
   const textboxId = "oracle-"+oracleName+"-result";
 
@@ -62,6 +62,11 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, tem
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
     }, 500);
+
+    // save GeneratorKeyword
+    if ( saveGeneratorKeyword ) {
+      saveGeneratorKeyword(oracleName, oracleResult);
+    }
 
   }
 

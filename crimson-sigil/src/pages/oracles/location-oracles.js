@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
@@ -26,6 +26,8 @@ export default function LocationOracles() {
   const windowGlobal = typeof window !== 'undefined' && window
   const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
 
+  const [generatorKeywords, setGeneratorKeywords] = useState({});
+
   useEffect(() => {
     // on load...
     const oraclesLog = document.getElementById('oracles-log');
@@ -33,8 +35,75 @@ export default function LocationOracles() {
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
 
+  function stripHtml(html) {
+    let tmp = document.createElement("DIV");
+    tmp.innerHTML = html.replace('<br/>', ': ');
+    return tmp.textContent || tmp.innerText || "";
+  }
+
+  const saveGeneratorKeyword = (name, value) => {
+    var genKeywords = {};
+    if ( name.startsWith('locations') ) {
+      name = 'location';
+    }
+    genKeywords[name] = stripHtml(value);
+    setGeneratorKeywords({ ...generatorKeywords, ...genKeywords });
+  };
+
+  function openAIGeneratedLocation(e) {
+    e.preventDefault();
+    var url = new URL("https://perchance.org/fantasy-landscape");
+    var searchParams = {};
+    const keywords = ["location-descriptor", "locations-desert", "locations-alpine", "locations-plains", "locations-woodlands", "locations-frigid", "locations-coast", "biome"];
+
+    keywords.forEach((keyword) => {
+      var key = keyword;
+      if ( keyword.startsWith('locations') ) { key = 'location'; }
+      if ( generatorKeywords[key] ) {
+        searchParams[key] = generatorKeywords[key];
+      }
+    });
+    url.search = new URLSearchParams(searchParams);
+
+    window.open(url, '_blank');
+  }
+
+  function openAIGeneratedCityLocation(e) {
+    e.preventDefault();
+    var url = new URL("https://perchance.org/fantasy-city-location");
+    var searchParams = {};
+    const keywords = ["city-location", "city-description"];
+
+    keywords.forEach((keyword) => {
+      var key = keyword;
+      if ( generatorKeywords[key] ) {
+        searchParams[key] = generatorKeywords[key];
+      }
+    });
+    url.search = new URLSearchParams(searchParams);
+
+    window.open(url, '_blank');
+  }
+  function openAIGeneratedIncursion(e) {
+    e.preventDefault();
+    var url = new URL("https://perchance.org/fantasy-incursion");
+    var searchParams = {};
+    const keywords = ["incursion-domain", "incursion-theme"];
+
+    keywords.forEach((keyword) => {
+      var key = keyword;
+      if ( generatorKeywords[key] ) {
+        searchParams[key] = generatorKeywords[key];
+      }
+    });
+    url.search = new URLSearchParams(searchParams);
+
+    window.open(url, '_blank');
+  }
+
   return (
     <Layout title="LOCATION ORACLES" headings={headings}>
+
       <Seo title="Location Oracles" />
 
       <div id="oracles-log"></div>
@@ -43,33 +112,38 @@ export default function LocationOracles() {
 
         <h2 id="wilderness">WILDERNESS</h2>
         <h3 id="biome">BIOME</h3>
-        <Oracle oracleName="biome" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="biome" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
         <h3 id="location">LOCATION</h3>
         <blockquote><p>Use these oracles to generate a location inside a particular biome.</p></blockquote>
 
         <h4 id="locations-desert">DESERT / WASTELAND / TUNDRA</h4>
-        <Oracle oracleName="locations-desert" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-desert" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="locations-alpine">MOUNTAIN / ALPINE HILLS</h4>
-        <Oracle oracleName="locations-alpine" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-alpine" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="locations-plains">PLAINS AND HILLS</h4>
-        <Oracle oracleName="locations-plains" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-plains" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="locations-woodlands">FOREST / SHRUBLANDS / JUNGLE / SWAMP</h4>
-        <Oracle oracleName="locations-woodlands" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-woodlands" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="locations-frigid">FRIGID / TAIGA / GLACIER</h4>
-        <Oracle oracleName="locations-frigid" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-frigid" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="locations-coast">COAST / WATER MASS</h4>
-        <Oracle oracleName="locations-coast" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="locations-coast" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <br/>
         <h3 id="location-descriptor">LOCATION DESCRIPTOR</h3>
-        <Oracle oracleName="location-descriptor" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="location-descriptor" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
+
+        <br/>
+        <button class="ai-generator-button" onClick={openAIGeneratedLocation}>Generate an AI image for <br/><i>{generatorKeywords['location-descriptor'] || "[undefined descriptor]"}</i> <i>{generatorKeywords['location'] || "[undefined location]"}</i> in a <i>{generatorKeywords['biome'] || "[undefined biome]"}</i> landscape</button>
+        <br/>
+        <br/>
 
         <h3 id="location-feature">LOCATION FEATURE</h3>
         <blockquote><p>Use these oracles to generate a feature, object or situation found in this location.</p></blockquote>
@@ -109,13 +183,18 @@ export default function LocationOracles() {
         <Oracle oracleName="city-history" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="city-description">CITY DESCRIPTION</h4>
-        <Oracle oracleName="city-description" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="city-description" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h4 id="city-industry">CITY PRIMARY INDUSTRY OR TRADE</h4>
         <Oracle oracleName="city-industry" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="city-location">LOCATION IN THE CITY</h4>
-        <Oracle oracleName="city-location" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="city-location" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
+
+        <br/>
+        <button class="ai-generator-button" onClick={openAIGeneratedCityLocation}>Generate an AI image for <br/><i>{generatorKeywords['city-location'] || "[undefined location]"}</i>  in a city; <i>{generatorKeywords['city-description'] || "[undefined description]"}</i></button>
+        <br/>
+        <br/>
 
         <h4 id="city-tavern">TAVERN IN THE CITY</h4>
         <Oracle oracleName="city-tavern" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
@@ -128,11 +207,14 @@ export default function LocationOracles() {
         <blockquote><p>Use these oracles when envisioning a perilous site to explore or traverse. You might want to <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> to wander through it.</p></blockquote>
 
         <h3 id="incursion-theme">INCURSION THEME</h3>
-        <Oracle oracleName="incursion-theme" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="incursion-theme" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
         <h3 id="incursion-domain">INCURSION DOMAIN</h3>
-        <Oracle oracleName="incursion-domain" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="incursion-domain" oracleDatatable={locationOracleResults} oracleLogName={oracleLogName} saveGeneratorKeyword={saveGeneratorKeyword}/>
 
+        <br/>
+        <button class="ai-generator-button" onClick={openAIGeneratedIncursion}>Generate an AI image for <br/><i>{generatorKeywords['incursion-domain'] || "[undefined domain]"}</i> It is <i>{generatorKeywords['incursion-theme'] || "[undefined theme]"}</i></button>
+        <br/>
         <br/>
         <h3 id="incursion-details">INCURSION DETAILS</h3>
         <blockquote><p>Use these oracles to reveal the incursion site name, depending on the Domain.<br/>When you explore or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to advance and get a <span class="primary">SUCCESS</span>, reveal a new Feature.</p></blockquote>
