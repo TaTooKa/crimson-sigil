@@ -17,6 +17,7 @@ export default function MonsterOracles() {
     {depth: 3, value: "MONSTROSITY PRIMARY FORM"},
     {depth: 3, value: "MONSTROSITY CHARACTERISTICS"},
     {depth: 3, value: "MONSTROSITY ABILITIES"},
+    {depth: 2, value: "DEMON LORD"},
 
   ]
 
@@ -97,6 +98,12 @@ export default function MonsterOracles() {
         <button class="ai-generator-button" onClick={openAIGeneratedMonsterPortrait}><OpenInNewIcon/>Generate an AI image for <br/>A <i>{generatorKeywords['monstrosity-size'] || "[undefined size]"}</i> <i>{generatorKeywords['monstrosity-form'] || "[undefined form]"}</i> monster. Its type is <i>{generatorKeywords['monstrosity-type'] || "[undefined type]"}</i> characteristics: <i>{generatorKeywords['monstrosity-characteristics'] || "[undefined characteristics]"}</i>. abilities: <i>{generatorKeywords['monstrosity-abilities'] || "[undefined abilities]"}</i>.</button>
         <br/>
         <br/>
+        
+        <h2 id="demon-lord">DEMON LORD</h2>
+        <blockquote><p>Use this oracle to generate the name and title of a Demon Lord or other lieutenants of the forces of Evil.</p></blockquote>
+
+        <h3 id="demon-lord-title">DEMON LORD NAME AND TITLE</h3>
+        <Oracle oracleName="demon-lord-title" oracleDatatable={monsterOracleResults} oracleLogName={oracleLogName} template/>
 
         <br/>
         <br/>
