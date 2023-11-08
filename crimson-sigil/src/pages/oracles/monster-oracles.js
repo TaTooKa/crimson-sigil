@@ -18,6 +18,9 @@ export default function MonsterOracles() {
     {depth: 3, value: "MONSTROSITY CHARACTERISTICS"},
     {depth: 3, value: "MONSTROSITY ABILITIES"},
     {depth: 2, value: "DEMON LORD"},
+    {depth: 3, value: "DEMON LORD TITLE"},
+    {depth: 3, value: "DEMON LORD ASPECT"},
+    {depth: 3, value: "DEMON LORD ASSET"},
 
   ]
 
@@ -100,11 +103,26 @@ export default function MonsterOracles() {
         <br/>
         
         <h2 id="demon-lord">DEMON LORD</h2>
-        <blockquote><p>Use this oracle to generate the name and title of a Demon Lord or other lieutenants of the forces of Evil.</p></blockquote>
+        <blockquote><p>Use these oracles to generate details of a Demon Lord or other lieutenants of the forces of Evil.</p></blockquote>
 
         <h3 id="demon-lord-title">DEMON LORD NAME AND TITLE</h3>
         <Oracle oracleName="demon-lord-title" oracleDatatable={monsterOracleResults} oracleLogName={oracleLogName} template/>
 
+        <h3 id="demon-lord-aspect">DEMON LORD ASPECT</h3>
+        <Oracle oracleName="demon-lord-aspect" oracleDatatable={monsterOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="demon-lord-asset">DEMON LORD ASSET</h3>
+        <Oracle oracleName="demon-lord-asset" oracleDatatable={monsterOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
