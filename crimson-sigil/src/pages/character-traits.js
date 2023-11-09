@@ -18,6 +18,7 @@ import explorer_art from '/src/images/explorer.jpg';
 import exorcist_art from '/src/images/exorcist.jpg';
 import faeborn_art from '/src/images/faeborn.jpg';
 import halffiend_art from '/src/images/halffiend.jpg';
+import illusionist_art from '/src/images/illusionist.jpg';
 import ironclad_art from '/src/images/ironclad.jpg';
 import knight_art from '/src/images/knight.jpg';
 import lightfooted_art from '/src/images/lightfooted.jpg';
@@ -43,6 +44,7 @@ import magus_art from '/src/images/magus.jpg';
 import necromancer_art from '/src/images/necromancer.jpg';
 import paladin_art from '/src/images/paladin.jpg';
 import spellblade_art from '/src/images/spellblade.jpg';
+import summoner_art from '/src/images/summoner.jpg';
 import wielder_art from '/src/images/wielder.jpg';
 import wildwarden_art from '/src/images/wildwarden.jpg';
 
@@ -65,6 +67,7 @@ function CharacterStats() {
     {depth: 3, value: "EXORCIST"},
     {depth: 3, value: "FAEBORN"},
     {depth: 3, value: "HALF-FIEND"},
+    {depth: 3, value: "ILLUSIONIST"},
     {depth: 3, value: "IRONCLAD"},
     {depth: 3, value: "KNIGHT"},
     {depth: 3, value: "LIGHT-FOOTED"},
@@ -91,6 +94,7 @@ function CharacterStats() {
     {depth: 3, value: "NECROMANCER"},
     {depth: 3, value: "PALADIN"},
     {depth: 3, value: "SPELLBLADE"},
+    {depth: 3, value: "SUMMONER"},
     {depth: 3, value: "WIELDER"},
     {depth: 3, value: "WILDWARDEN"},
 ]
@@ -266,6 +270,10 @@ function CharacterStats() {
               <span>You are the spawn of a human and a denizen of deviltry like a Vampire, Demon, Incubus / Succubus, etc. Your evil heritage manifests mildly; both their weaknesses and strengths. Choose a <b>vulnerability</b> you inherited (sunlight, holy symbols, silver, etc): You gain a <span class="bane">BANE</span> whenever you are exposed to or affected by it. Also choose an <b>ability</b> you get (superhuman strength, agility or resistance, invulnerability to an element or source, a specific power, etc): You gain a <span class="boon">BOON</span> whenever you harness it for any action, but you must <a href="/prompts/suffer-prompts#endure-stress">ENDURE STRESS (minor)</a> whenever you do.</span>
             </Trait>
 
+            <Trait name="Illusionist" title="ILLUSIONIST" art={illusionist_art} inputs={inputs} handleChange={handleChange}>
+              <span>You can create minor arcane images or apparitions that can distract your foes. With the right conditions (like scenery, lighting or enough plausibility), you might deceive someone into thinking they are real. Gain a <span class="boon">BOON</span> when you use your illusions and test your <span class="stat">GUILE</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a>, <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a>.</span>
+            </Trait>
+
             <Trait name="Ironclad" title="IRONCLAD" art={ironclad_art} inputs={inputs} handleChange={handleChange}>
               <span>You have extensive training in wearing heavy armor. Gain a <span class="boon">BOON</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend. Additionally, when you <a href="/prompts/general-prompts#clash">CLASH</a> and you obtain a <span class="secondary bold">FAILURE</span>, you gain a <span class="boon">BOON</span> to your next action by leveraging the surprising protection of your armor.</span>
             </Trait>
@@ -395,6 +403,12 @@ function CharacterStats() {
               <span>You can channel your sorcery into the arts of melee combat. You can produce a blade of pure magic, a shield of arcane energy or any other warring implement you can imagine. This gives you a <span class="boon">BOON</span> to any attempt to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while in combat, but in order to manifest this arcane weapon you must <a href="/prompts/suffer-prompts#endure-stress">ENDURE STRESS (serious)</a>.</span>
               <br/><br/><hr/><br/>
               <p>Acquired when <i>you finish training in the lost arts of the legendary war-mages from a suitable teacher</i>.</p>
+            </Trait>
+
+            <Trait name="Summoner" title="SUMMONER" art={summoner_art} inputs={inputs} handleChange={handleChange}>
+              <span>You have perfected the art of mystic invocations, being able to summon a mythical creature under your command. <a href="/prompts/suffer-prompts#endure-stress">ENDURE STRESS</a> to cast the conjuration (<i><span class="secondary">serious</span></i> for small or dim-witted creatures, <i><span class="secondary">major</span></i> for bigger, stronger or smarter ones). Each summon gives you a <span class="boon">BOON</span> (or two <span class="boon">BOONS</span> if it’s a strong one) to any action it could reasonably help with. At the end of the scene, you must <a href="/prompts/general-prompts#compel">COMPEL</a> it to be dispelled obediently (with a <span class="bane">BANE</span> if its a strong creature); on a <span class="secondary">FAILURE</span> it disobeys or turns against you: <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a>.</span>
+              <br/><br/><hr/><br/>
+              <p>Acquired once <i>you have discovered an ancient ritual of invocation and successfully performed its procedures in a place of great power by summoning a being much more powerful than yourself</i>.</p>
             </Trait>
 
             <Trait name="Wielder" title="WIELDER" art={wielder_art} inputs={inputs} handleChange={handleChange}>
