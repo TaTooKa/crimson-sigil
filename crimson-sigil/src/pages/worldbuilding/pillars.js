@@ -59,7 +59,7 @@ function Pillars() {
   return (
     <Layout title="Your Pillars" headings={headings}>
       <Seo title="Your Pillars" />
-      <blockquote><p>These Pillars are what prescribe the truths of your world. <br/><br/>Before starting to play, when envisioning the world, the players should read on the following sections and decide on each option, to define in broad strokes the tropes and foundations of the setting of Crimson Sigil.<br/><br/>If so desired, some can be left undefined, or you can borrow ideas from each option or otherwise make up the details on your own.</p></blockquote>
+      <blockquote><p>These Pillars are what prescribe the truths of your world. <br/><br/>Before starting to play, when envisioning the world, the players should read on the following sections and decide on each option, to define in broad strokes the tropes and foundations of the setting of <span class="crimson-sigil-title">Crimson Sigil</span>.<br/><br/>If so desired, some can be left undefined, or you can borrow ideas from each option or otherwise make up the details on your own.</p></blockquote>
       <form class="pillars">
 
         <Pillar name="COMMUNITIES" id="communities" inputs={inputs} handleChange={handleChange}
