@@ -1883,6 +1883,8 @@ export default function GlobalStyle() {
               display: block;
               width: 100%;
               cursor: pointer;
+              text-transform: capitalize;
+              text-align: center;
               border-radius: 5px;
               padding: 3px 10px;
               margin: 10px 0 10px 0;

@@ -19,7 +19,7 @@ const Pillar = (props) => {
 
   return (
     <div class="pillar" id={pillarId+"-container"}>
-      <h2>{pillarName}</h2>
+      <h2 id={pillarId}>{pillarName}</h2>
 
       <input type="radio" id={option0Id} name={pillarId} onChange={props.handleChange} value={props.inputs[option0Id] || "0"} checked={props.inputs[pillarId]==="0"}/>
       <label for={option0Id}>{optionName0}</label>
