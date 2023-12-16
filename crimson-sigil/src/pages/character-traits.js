@@ -376,7 +376,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait name="HybridGuardian" title="HYBRID GUARDIAN" art={hybridguardian_art} inputs={inputs} handleChange={handleChange}>
-              <span>You belong to a secretive order of guardians that, in order to protect mankind, mutate themselves into fiendish hybrids. You can use demonic powers and even temporarily reshape parts of your body, which gives a <span class="boon">BOON</span> to any action at the cost of losing <b>-1 WILL</b> each time. At the end of the fray, or when you decide to return back to normal, you must <a href="/prompts/suffer-prompts#endure-stress">ENDURE serious STRESS</a> with a <span class="bane">BANE</span> to avoid the temptation of succumbing and transforming into that which you’ve sworn to fight.</span>
+              <span>In order to protect mankind, you mutate yourself into a fiendish hybrid at will. You can use demonic powers and even temporarily reshape parts of your body, which gives a <span class="boon">BOON</span> to any action at the cost of losing <b>-1 WILL</b> each time (these can be cumulative). At the end of the fray, or when you decide to return back to normal, you must <a href="/prompts/suffer-prompts#endure-stress">ENDURE serious STRESS</a> with a <span class="bane">BANE</span> to avoid the temptation of succumbing and transforming into that which you’ve sworn to fight.</span>
               <br/><br/><hr/><br/>
               <p>Acquired when <i>you submit yourself to the forbidden rite of transformation in which demonic blood is transfused into your body</i>.</p>
             </Trait>
