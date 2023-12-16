@@ -34,6 +34,10 @@
       link: '/oracles/treasure-oracles'
     - label: 'Misc Oracles'
       link: '/oracles/misc-oracles'
+- label: World Building
+  items:
+    - label: 'Your Pillars'
+      link: '/worldbuilding/pillars'
 - label: Rules Reference
   items:
     - label: 'General Rules'

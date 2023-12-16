@@ -1861,6 +1861,53 @@ export default function GlobalStyle() {
         }        
 
         ${'' /* END HOW TO PLAY PAGE  */}
+
+        ${'' /* PILLARS PAGE  */}
+
+        form.pillars {
+          div.pillar {
+            margin: 10px 0 25px 0;
+            padding: 10px;
+            transition: 0.5s;
+            border-radius: 5px;
+            border: 1px solid ${theme.darkcolors.components.blockquote.background};
+            background: #00000066;
+            box-shadow: 0 5px 10px #000;
+            h2 {
+              margin-top: 5px;
+            }
+            input {
+              display: none;
+            }
+            label {
+              display: block;
+              width: 100%;
+              cursor: pointer;
+              border-radius: 5px;
+              padding: 3px 10px;
+              margin: 10px 0 10px 0;
+              transition: 1s;
+              color: ${theme.darkcolors.primary_darker};
+              text-shadow: 0 0 15px ${theme.darkcolors.primary_darker};
+              box-shadow: inset 0 0 5px ${theme.darkcolors.primary_darker};
+            }
+            input:checked+label {
+              color: ${theme.darkcolors.primary};
+              text-shadow: 0 0 15px ${theme.darkcolors.primary};
+              box-shadow: inset 0 0 5px ${theme.darkcolors.primary};
+            }
+            div.description {
+              display: none;
+              font-size: 0.9em;
+              padding: 5px;
+            }
+            div.description.visible {
+              display: block;
+            }
+          }
+        }
+
+        ${'' /* END PILLARS PAGE  */}
         
       `}
     />
