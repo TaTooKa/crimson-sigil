@@ -1906,6 +1906,16 @@ export default function GlobalStyle() {
             div.description.visible {
               display: block;
             }
+            div.description img {
+              border-radius: 5px;
+              transition: 0.5s;
+            }
+            div.description img:hover {
+              transform: scale(1.2);
+              border: 0;
+              border-radius: 25px;
+              box-shadow: 0px 0px 10px #000;
+            }
           }
         }
 
