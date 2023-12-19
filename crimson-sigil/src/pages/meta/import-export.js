@@ -39,11 +39,15 @@ export default function importExport() {
         const loadedCharacterStats = loadedCharacterData['character'];
         const loadedCharacterTraits = loadedCharacterData['traits'];
         const loadedCharacterChallenges = loadedCharacterData['challenges'];
+        const loadedCharacterNumOfChallenges = loadedCharacterData['numOfChallenges'];
+        const loadedCharacterPillars = loadedCharacterData['pillars'];
 
         if ( windowGlobal ) {
             windowGlobal.localStorage.setItem("character", JSON.stringify(loadedCharacterStats));
             windowGlobal.localStorage.setItem("traits", JSON.stringify(loadedCharacterTraits));
             windowGlobal.localStorage.setItem("challenges", JSON.stringify(loadedCharacterChallenges));
+            windowGlobal.localStorage.setItem("numOfChallenges", JSON.stringify(loadedCharacterNumOfChallenges));
+            windowGlobal.localStorage.setItem("pillars", JSON.stringify(loadedCharacterPillars));
         }
 
     }
@@ -61,9 +65,19 @@ export default function importExport() {
         const savedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("challenges") : "{}"
         const savedChallenges = JSON.parse(savedChallengesStr)
 
+        // num of challenges
+        const savedNumOfChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("numOfChallenges") : "{}"
+        const savedNumOfChallenges = JSON.parse(savedNumOfChallengesStr)
+
+        // num of challenges
+        const savedPillarsStr = windowGlobal ? windowGlobal.localStorage.getItem("pillars") : "{}"
+        const savedPillars = JSON.parse(savedPillarsStr)
+
         characterData['character'] = savedCharacter;
         characterData['traits'] = savedTraits;
         characterData['challenges'] = savedChallenges;
+        characterData['numOfChallenges'] = savedNumOfChallenges;
+        characterData['pillars'] = savedPillars;
 
         var filename = savedCharacter['name'].replace(/[^a-z0-9]/gi, '_').toLowerCase();
         download(JSON.stringify(characterData), filename, 'application/json');
